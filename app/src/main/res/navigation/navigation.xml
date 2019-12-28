@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.potensituitionapp.TitleFragment"
+        android:label="TitleFragment"
+        tools:layout="@layout/fragment_title">
+        <action
+            android:id="@+id/action_titleFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_titleFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:popUpTo="@+id/titleFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.potensituitionapp.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_mainmenuFragment"
+            app:destination="@id/mainmenuFragment"
+            app:popUpTo="@+id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.potensituitionapp.register.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@+id/titleFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainmenuFragment"
+        android:name="com.example.potensituitionapp.Main.MainmenuFragment"
+        android:label="MainmenuFragment"
+        tools:layout="@layout/fragment_mainmenu">
+        <action
+            android:id="@+id/action_mainmenuFragment_to_titleFragment"
+            app:destination="@id/titleFragment"
+            app:popUpTo="@+id/titleFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
