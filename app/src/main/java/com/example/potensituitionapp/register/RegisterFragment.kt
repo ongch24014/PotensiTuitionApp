@@ -52,10 +52,6 @@ class RegisterFragment : Fragment() {
 
         binding.setLifecycleOwner(this)
 
-        var stud:Student = loginViewModel.getStud()
-
-        binding.txtViewData.text = stud.name + stud.password
-
 
         binding.btnRegister.setOnClickListener{
             username = binding.txtName.text.toString()
@@ -66,7 +62,7 @@ class RegisterFragment : Fragment() {
             stud.name = username
             stud.password = password
 
-            loginViewModel.insert(stud)
+            dataSource.insert(stud)
 
             backToHome()}
 

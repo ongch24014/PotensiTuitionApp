@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.potensituitionapp.MainActivity.Companion.loggedUser
 
@@ -45,6 +46,11 @@ class MainmenuFragment : Fragment() {
             this.findNavController().navigate(
                 MainmenuFragmentDirections
                     .actionMainmenuFragmentToTitleFragment())
+        }
+
+        binding.AddCourseButton.setOnClickListener{view: View -> view.findNavController().navigate(
+            MainmenuFragmentDirections.actionMainmenuFragmentToAddcourseFragment2()
+        )
         }
 
 

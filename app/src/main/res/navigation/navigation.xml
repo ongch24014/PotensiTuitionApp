@@ -53,5 +53,16 @@
             app:destination="@id/titleFragment"
             app:popUpTo="@+id/titleFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mainmenuFragment_to_addcourseFragment2"
+            app:destination="@id/addcourseFragment" />
     </fragment>
+
+
+    <fragment
+        android:id="@+id/addcourseFragment"
+        android:name="com.example.potensituitionapp.addcourse.AddcourseFragment"
+        android:label="AddcourseFragment"
+        tools:layout="@layout/fragment_addcourse"
+        />
 </navigation>

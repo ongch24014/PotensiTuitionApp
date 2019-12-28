@@ -15,4 +15,5 @@
     <string name="login_failed">Invalid username or password!</string>
     <string name="logout_button">Logout</string>
     <string name="logout_success">Successfully logged out!</string>
+    <string name="stud_id">Student ID</string>
 </resources>
