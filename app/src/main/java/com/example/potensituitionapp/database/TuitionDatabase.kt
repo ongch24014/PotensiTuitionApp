@@ -5,10 +5,21 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = arrayOf(Student::class,Course::class), version = 3, exportSchema = false)
+@Database(entities = arrayOf(Student::class,Course::class,Teacher::class,Attendance::class
+,Timetable::class,Enrollment::class,Payment::class,Admin::class,ClassRecord::class
+,Chapter::class), version = 4, exportSchema = false)
 abstract class TuitionDatabase : RoomDatabase(){
+
     abstract val studentDatabaseDao: StudentDatabaseDao
     abstract val courseDatabaseDao: CourseDao
+    abstract val teacherDatabaseDao: TeacherDao
+    abstract val attendanceDatabaseDao: AttendanceDao
+    abstract val timetableDatabaseDao: TimetableDao
+    abstract val enrollmentDatabaseDao: EnrollmentDao
+    abstract val paymentDatabaseDao: PaymentDao
+    abstract val adminDatabaseDao: AdminDao
+    abstract val classRecordDatabaseDao: ClassRecordDao
+    abstract val ChapterDatabaseDao: ChapterDao
 
     companion object {
         @Volatile

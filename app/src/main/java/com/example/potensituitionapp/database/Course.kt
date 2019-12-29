@@ -4,7 +4,6 @@ package com.example.potensituitionapp.database
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.io.FileDescriptor
 
 @Entity(tableName = "course_table")
 data class Course (
@@ -22,6 +21,5 @@ data class Course (
 
     @ColumnInfo(name = "course_price")
     var coursePrice: Double = 0.0
-
 
 )
