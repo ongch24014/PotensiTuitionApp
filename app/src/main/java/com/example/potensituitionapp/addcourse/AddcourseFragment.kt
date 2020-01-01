@@ -53,16 +53,6 @@ class AddcourseFragment : Fragment() {
 
         binding.setLifecycleOwner(this)
 
-        var c:Course? = dataSource.get(1)
-        var c1:Course? = dataSource.get(2)
-        var c3:Course? = dataSource.get(3)
-
-        Log.i("1",c?.courseID)
-        Log.i("2",c1?.courseID)
-        Log.i("3",c3?.courseID)
-
-
-
 
         binding.btnAdd.setOnClickListener{
 

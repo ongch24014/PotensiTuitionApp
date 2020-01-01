@@ -4,6 +4,7 @@ package com.example.potensituitionapp.login
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
@@ -19,11 +20,13 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import com.example.potensituitionapp.MainActivity
 import com.example.potensituitionapp.MainActivity.Companion.loggedUser
 import com.example.potensituitionapp.R
 import com.example.potensituitionapp.database.Student
 import com.example.potensituitionapp.database.TuitionDatabase
 import com.example.potensituitionapp.databinding.FragmentLoginBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlin.math.log
@@ -41,15 +44,13 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        (activity as AppCompatActivity).supportActionBar?.title = "Login"
+//        (activity as AppCompatActivity).supportActionBar?.title = "Login"
 
         val binding: FragmentLoginBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_login, container, false)
 
         //Database
         val application = requireNotNull(this.activity).application
-
         val dataSource = TuitionDatabase.getInstance(application).studentDatabaseDao
 
         //buttonClicked
@@ -88,6 +89,8 @@ class LoginFragment : Fragment() {
     }
 
     private fun navigateToMainPage(){
+
+        (activity as MainActivity).setNavVisible()
         this.findNavController().navigate(
             LoginFragmentDirections
                 .actionLoginFragmentToMainmenuFragment())

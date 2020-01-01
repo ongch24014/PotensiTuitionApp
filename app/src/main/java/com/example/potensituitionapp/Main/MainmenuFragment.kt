@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.potensituitionapp.MainActivity
 import com.example.potensituitionapp.MainActivity.Companion.loggedUser
 
 import com.example.potensituitionapp.R
@@ -22,6 +23,11 @@ import kotlin.math.log
  * A simple [Fragment] subclass.
  */
 class MainmenuFragment : Fragment() {
+
+    companion object {
+        fun newInstance(): MainmenuFragment = MainmenuFragment()
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +48,9 @@ class MainmenuFragment : Fragment() {
         binding.LogoutButton.setOnClickListener{
             loggedUser = ""
             Toast.makeText(activity, R.string.logout_success, Toast.LENGTH_SHORT).show()
+
+            (activity as MainActivity).setNavInvisible()
+
 
             this.findNavController().navigate(
                 MainmenuFragmentDirections

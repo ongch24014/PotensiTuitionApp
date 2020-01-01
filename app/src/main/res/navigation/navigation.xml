@@ -18,6 +18,9 @@
             android:id="@+id/action_titleFragment_to_registerFragment"
             app:destination="@id/registerFragment"
             app:popUpTo="@+id/titleFragment" />
+        <action
+            android:id="@+id/action_titleFragment_to_mainmenuFragment2"
+            app:destination="@id/mainmenuFragment" />
     </fragment>
 
     <fragment
@@ -65,4 +68,14 @@
         android:label="AddcourseFragment"
         tools:layout="@layout/fragment_addcourse"
         />
+    <fragment
+        android:id="@+id/studentprofileFragment2"
+        android:name="com.example.potensituitionapp.userprofile.StudentprofileFragment"
+        android:label="fragment_studentprofile"
+        tools:layout="@layout/fragment_studentprofile" />
+    <fragment
+        android:id="@+id/timetableFragment2"
+        android:name="com.example.potensituitionapp.timetable.TimetableFragment"
+        android:label="fragment_timetable"
+        tools:layout="@layout/fragment_timetable" />
 </navigation>
