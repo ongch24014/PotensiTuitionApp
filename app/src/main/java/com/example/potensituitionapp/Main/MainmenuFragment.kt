@@ -2,6 +2,8 @@ package com.example.potensituitionapp.Main
 
 
 import android.os.Bundle
+import android.os.Handler
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,12 +19,16 @@ import com.example.potensituitionapp.MainActivity.Companion.loggedUser
 import com.example.potensituitionapp.R
 import com.example.potensituitionapp.database.TuitionDatabase
 import com.example.potensituitionapp.databinding.FragmentMainmenuBinding
-import kotlin.math.log
+import android.view.KeyEvent.KEYCODE_BACK
+import androidx.fragment.app.FragmentManager
+
 
 /**
  * A simple [Fragment] subclass.
  */
 class MainmenuFragment : Fragment() {
+
+    private var doubleBackToExitPressedOnce = false
 
     companion object {
         fun newInstance(): MainmenuFragment = MainmenuFragment()
@@ -51,7 +57,6 @@ class MainmenuFragment : Fragment() {
 
             (activity as MainActivity).setNavInvisible()
 
-
             this.findNavController().navigate(
                 MainmenuFragmentDirections
                     .actionMainmenuFragmentToTitleFragment())
@@ -62,8 +67,35 @@ class MainmenuFragment : Fragment() {
         )
         }
 
-
         return binding.root
+    }
+
+    override//Pressed return button - returns to the results menu
+    fun onResume() {
+        super.onResume()
+        view!!.isFocusableInTouchMode = true
+        view!!.requestFocus()
+        view!!.setOnKeyListener(object : View.OnKeyListener {
+            override fun onKey(v: View, keyCode: Int, event: KeyEvent): Boolean {
+                return if (event.getAction() === KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+                    if (doubleBackToExitPressedOnce) {
+                        loggedUser=""
+                        findNavController().navigate(MainmenuFragmentDirections.actionMainmenuFragmentToTitleFragment())
+                        return true
+                    }
+
+                    doubleBackToExitPressedOnce = true
+                    Toast.makeText(context, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
+
+                    Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
+
+
+
+
+                    true
+                } else false
+            }
+        })
     }
 
 

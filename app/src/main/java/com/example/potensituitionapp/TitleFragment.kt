@@ -39,7 +39,7 @@ class TitleFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.title = "Potensi Tuition App"
 
 
-            (activity as MainActivity).setNavInvisible()
+        (activity as MainActivity).setNavInvisible()
 
 
         if(loggedUser.equals("")){
@@ -49,9 +49,6 @@ class TitleFragment : Fragment() {
             (activity as MainActivity).setNavVisible()
             findNavController().navigate(R.id.mainmenuFragment)
         }
-
-
-
 
         return binding.root
     }

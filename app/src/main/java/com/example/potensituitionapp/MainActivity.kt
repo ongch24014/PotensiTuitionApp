@@ -25,6 +25,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_mainmenu.*
+import android.R.attr.tag
+import androidx.core.app.ComponentActivity
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import androidx.navigation.fragment.findNavController
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -47,7 +54,6 @@ class MainActivity : AppCompatActivity() {
 
 //        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
 
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -64,5 +70,6 @@ class MainActivity : AppCompatActivity() {
         var bottomNav: BottomNavigationView = findViewById(R.id.bottomNav)
         bottomNav.visibility = View.VISIBLE
     }
+
 
 }
