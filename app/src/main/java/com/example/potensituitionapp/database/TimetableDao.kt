@@ -28,4 +28,7 @@ interface TimetableDao {
 
     @Query("SELECT * FROM timetable_table ORDER BY class_ID DESC")
     fun getAllTimetable(): LiveData<List<Timetable>>
+
+    @Query("SELECT timetable_table.* FROM timetable_table INNER JOIN enrollment_table ON enrollment_table.class_ID = timetable_table.class_ID  AND enrollment_table.student_ID = :key ")
+    fun getStudentTimeTable(key: String): LiveData<List<Timetable>>
 }

@@ -30,5 +30,4 @@ interface EnrollmentDao {
     @Query("SELECT * FROM enrollment_table ORDER BY student_ID DESC")
     fun getAllEnrollment(): LiveData<List<Enrollment>>
 
-
 }

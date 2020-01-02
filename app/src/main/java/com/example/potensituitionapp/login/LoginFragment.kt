@@ -71,7 +71,7 @@ class LoginFragment : Fragment() {
                 if(stud.password.equals(password)){
                     Toast.makeText(activity, R.string.login_success, Toast.LENGTH_SHORT).show()
 
-                    loggedUser = stud.name
+                    loggedUser = stud.studentID
 
                     Log.i("Result","Successfully logged in")
 

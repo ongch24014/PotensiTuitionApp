@@ -53,11 +53,6 @@ class TitleFragment : Fragment() {
         return binding.root
     }
 
-    @Override
-    fun onBackPressed(){
-
-
-    }
 
 
 }

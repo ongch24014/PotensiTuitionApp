@@ -6,8 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 
 import com.example.potensituitionapp.R
+import com.example.potensituitionapp.database.TuitionDatabase
+import com.example.potensituitionapp.databinding.FragmentTimetableBinding
+import com.example.potensituitionapp.register.RegisterViewModelFactory
 
 /**
  * A simple [Fragment] subclass.
@@ -19,7 +26,38 @@ class TimetableFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_timetable, container, false)
+        (activity as AppCompatActivity).supportActionBar?.title = "Timetable"
+
+        // Inflate the layout for this fragment
+        val binding: FragmentTimetableBinding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_timetable,container,false)
+
+        val application = requireNotNull(this.activity).application
+        val dataSource = TuitionDatabase.getInstance(application).timetableDatabaseDao
+        val viewModelFactory = TimetableViewModelFactory(dataSource, application)
+
+
+        val timetableViewModel =
+            ViewModelProviders.of(
+                this, viewModelFactory).get(TimetableViewModel::class.java)
+
+        val adapter = TimetableAdapter()
+
+        timetableViewModel.timetables.observe(viewLifecycleOwner, Observer {
+            timetableViewModel.timetables.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    adapter.data = it
+                }
+            })
+        })
+
+        binding.timetableList.adapter = adapter
+
+        binding.timetableViewModel = timetableViewModel
+
+        binding.setLifecycleOwner(this)
+
+        return binding.root
     }
 
 

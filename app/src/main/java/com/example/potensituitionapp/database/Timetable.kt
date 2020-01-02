@@ -12,6 +12,9 @@ data class Timetable (
     @ColumnInfo(name = "class_ID")
     var classID: String = "",
 
+    @ColumnInfo(name = "class_name")
+    var className: String = "",
+
     @ColumnInfo(name = "class_venue")
     var classVenue: String = "",
 

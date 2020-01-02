@@ -16,4 +16,5 @@
     <string name="logout_button">Logout</string>
     <string name="logout_success">Successfully logged out!</string>
     <string name="stud_id">Student ID</string>
+    <string name="timetable">Time Table</string>
 </resources>
