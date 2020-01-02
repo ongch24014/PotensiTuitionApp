@@ -29,6 +29,21 @@ interface TimetableDao {
     @Query("SELECT * FROM timetable_table ORDER BY class_ID DESC")
     fun getAllTimetable(): LiveData<List<Timetable>>
 
-    @Query("SELECT timetable_table.* FROM timetable_table INNER JOIN enrollment_table ON enrollment_table.class_ID = timetable_table.class_ID  AND enrollment_table.student_ID = :key ")
+    @Query("SELECT timetable_table.* FROM timetable_table INNER JOIN enrollment_table ON enrollment_table.class_ID = timetable_table.class_ID  AND enrollment_table.student_ID = :key ORDER BY CASE class_day WHEN 'Monday' THEN 1 WHEN 'Tuesday' THEN 2 WHEN 'Wednesday' THEN 3 WHEN 'Thursday' THEN 4 WHEN 'Friday' THEN 5 END ")
     fun getStudentTimeTable(key: String): LiveData<List<Timetable>>
+
+    @Query("SELECT timetable_table.* FROM timetable_table INNER JOIN enrollment_table ON enrollment_table.class_ID = timetable_table.class_ID  AND enrollment_table.student_ID = :key AND timetable_table.class_day = :day")
+    fun getStudentTimeTableMonday(key: String,day:String): LiveData<List<Timetable>>
+
+    @Query("SELECT timetable_table.* FROM timetable_table INNER JOIN enrollment_table ON enrollment_table.class_ID = timetable_table.class_ID  AND enrollment_table.student_ID = :key AND timetable_table.class_day = :day")
+    fun getStudentTimeTableTuesday(key: String,day:String): LiveData<List<Timetable>>
+
+    @Query("SELECT timetable_table.* FROM timetable_table INNER JOIN enrollment_table ON enrollment_table.class_ID = timetable_table.class_ID  AND enrollment_table.student_ID = :key AND timetable_table.class_day = :day")
+    fun getStudentTimeTableWednesday(key: String,day:String): LiveData<List<Timetable>>
+
+    @Query("SELECT timetable_table.* FROM timetable_table INNER JOIN enrollment_table ON enrollment_table.class_ID = timetable_table.class_ID  AND enrollment_table.student_ID = :key AND timetable_table.class_day = :day")
+    fun getStudentTimeTableThursday(key: String,day:String): LiveData<List<Timetable>>
+
+    @Query("SELECT timetable_table.* FROM timetable_table INNER JOIN enrollment_table ON enrollment_table.class_ID = timetable_table.class_ID  AND enrollment_table.student_ID = :key AND timetable_table.class_day = :day")
+    fun getStudentTimeTableFriday(key: String,day:String): LiveData<List<Timetable>>
 }

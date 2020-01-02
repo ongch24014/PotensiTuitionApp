@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.potensituitionapp.R
 import com.example.potensituitionapp.TextItemViewHolder
 import com.example.potensituitionapp.database.Timetable
+import org.w3c.dom.Text
 
 class TimetableAdapter: RecyclerView.Adapter<TimetableAdapter.ViewHolder>() {
 
@@ -26,6 +27,7 @@ class TimetableAdapter: RecyclerView.Adapter<TimetableAdapter.ViewHolder>() {
         holder.roomc.text = item.classVenue
         holder.time.text = item.classTime.toString()
         holder.subject.text = item.className.toString()
+        holder.day.text = item.classDay.toString()
     }
 
     override fun onCreateViewHolder(
@@ -42,6 +44,7 @@ class TimetableAdapter: RecyclerView.Adapter<TimetableAdapter.ViewHolder>() {
         val subject: TextView = itemView.findViewById(R.id.subject)
         val roomc: TextView = itemView.findViewById(R.id.room)
         val time: TextView = itemView.findViewById(R.id.time)
+        val day:TextView = itemView.findViewById(R.id.day)
 
 
     }

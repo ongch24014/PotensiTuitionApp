@@ -2,6 +2,7 @@ package com.example.potensituitionapp.timetable
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ import com.example.potensituitionapp.R
 import com.example.potensituitionapp.database.TuitionDatabase
 import com.example.potensituitionapp.databinding.FragmentTimetableBinding
 import com.example.potensituitionapp.register.RegisterViewModelFactory
+import java.sql.Date
 
 /**
  * A simple [Fragment] subclass.
@@ -43,7 +45,7 @@ class TimetableFragment : Fragment() {
 
         val adapter = TimetableAdapter()
 
-        timetableViewModel.timetables.observe(viewLifecycleOwner, Observer {
+        timetableViewModel.timetables.observe(viewLifecycleOwner, Observer{
             timetableViewModel.timetables.observe(viewLifecycleOwner, Observer {
                 it?.let {
                     adapter.data = it
@@ -52,6 +54,27 @@ class TimetableFragment : Fragment() {
         })
 
         binding.timetableList.adapter = adapter
+
+
+
+
+//
+//        if(adapter.itemCount == 0){
+//            Log.i("s","shit")
+//            binding.timetableList.visibility = View.GONE
+//        }
+//
+//        else{
+//
+//        }
+//
+//        if(adapter1.itemCount == 0){
+//            binding.timetableListT.visibility = View.GONE
+//        }
+//
+//        else{
+//            binding.timetableListT.adapter = adapter1
+//        }
 
         binding.timetableViewModel = timetableViewModel
 
