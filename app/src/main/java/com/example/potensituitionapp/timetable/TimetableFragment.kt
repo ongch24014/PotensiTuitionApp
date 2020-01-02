@@ -68,14 +68,6 @@ class TimetableFragment : Fragment() {
 //
 //        }
 //
-//        if(adapter1.itemCount == 0){
-//            binding.timetableListT.visibility = View.GONE
-//        }
-//
-//        else{
-//            binding.timetableListT.adapter = adapter1
-//        }
-
         binding.timetableViewModel = timetableViewModel
 
         binding.setLifecycleOwner(this)
