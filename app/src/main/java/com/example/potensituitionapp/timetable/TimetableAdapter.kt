@@ -1,9 +1,11 @@
 package com.example.potensituitionapp.timetable
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.potensituitionapp.R
 import com.example.potensituitionapp.TextItemViewHolder
@@ -28,6 +30,30 @@ class TimetableAdapter: RecyclerView.Adapter<TimetableAdapter.ViewHolder>() {
         holder.time.text = item.classTime.toString()
         holder.subject.text = item.className.toString()
         holder.day.text = item.classDay.toString()
+
+        if(holder.day.text.equals("Monday")){
+            holder.back.setBackgroundResource(R.color.colorPrimary)
+        }
+
+        else if(holder.day.text.equals("Tuesday")){
+            holder.back.setBackgroundResource(R.color.colorAccent)
+
+        }
+
+        else if(holder.day.text.equals("Wednesday")){
+            holder.back.setBackgroundResource(R.color.colorTimetable)
+
+        }
+
+        else if(holder.day.text.equals("Thursday")){
+            holder.back.setBackgroundResource(R.color.colorPrimaryDark)
+
+        }
+
+        else if(holder.day.text.equals("Friday")){
+            holder.back.setBackgroundColor(Color.YELLOW)
+
+        }
     }
 
     override fun onCreateViewHolder(
@@ -45,6 +71,7 @@ class TimetableAdapter: RecyclerView.Adapter<TimetableAdapter.ViewHolder>() {
         val roomc: TextView = itemView.findViewById(R.id.room)
         val time: TextView = itemView.findViewById(R.id.time)
         val day:TextView = itemView.findViewById(R.id.day)
+        val back:ConstraintLayout = itemView.findViewById(R.id.constraint_layout)
 
 
     }
