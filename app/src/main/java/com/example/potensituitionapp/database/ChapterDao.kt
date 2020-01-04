@@ -19,7 +19,7 @@ interface ChapterDao {
     fun get(key: Long): Chapter?
 
     @Query("SELECT * from chapter_table WHERE class_ID = :key")
-    fun getAllChapter(key: String): List<Chapter>
+    fun getAllChapter(key: String): LiveData<List<Chapter>>
 
     @Query("SELECT * from chapter_table WHERE class_ID = :key AND chapter_num = :chap")
     fun getChapter(key: String, chap: Int): Chapter

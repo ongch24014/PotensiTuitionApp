@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.potensituitionapp.database.Timetable
 import com.example.potensituitionapp.databinding.ListItemDetailedclassBinding
 
-class MainmenuAdapter(val clickListener: TimetableListener):ListAdapter<Timetable, MainmenuAdapter.ViewHolder>(TimetableDiffCallback()) {
+class MainmenuAdapter(val clickListener: TimetableListener):
+    ListAdapter<Timetable, MainmenuAdapter.ViewHolder>(TimetableDiffCallback()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(getItem(position)!!, clickListener)

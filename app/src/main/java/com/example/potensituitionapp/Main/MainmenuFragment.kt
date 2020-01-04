@@ -69,6 +69,7 @@ class MainmenuFragment : Fragment() {
             mainmenuViewModel.timetables.observe(viewLifecycleOwner, Observer {
                 it?.let {
                     adapter.submitList(it)
+
                 }
             })
         })
@@ -88,10 +89,7 @@ class MainmenuFragment : Fragment() {
                     .actionMainmenuFragmentToTitleFragment())
         }
 
-        binding.AddCourseButton.setOnClickListener{view: View -> view.findNavController().navigate(
-            MainmenuFragmentDirections.actionMainmenuFragmentToAddcourseFragment2()
-        )
-        }
+
 
         mainmenuViewModel.navigateToDetailClass.observe(this, Observer { night ->
             night?.let {
