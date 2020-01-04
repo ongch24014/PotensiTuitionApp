@@ -21,6 +21,10 @@ import com.example.potensituitionapp.database.TuitionDatabase
 import com.example.potensituitionapp.databinding.FragmentMainmenuBinding
 import android.view.KeyEvent.KEYCODE_BACK
 import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.potensituitionapp.timetable.TimetableAdapter
 
 
 /**
@@ -48,6 +52,27 @@ class MainmenuFragment : Fragment() {
         //Database
         val application = requireNotNull(this.activity).application
         val dataSource = TuitionDatabase.getInstance(application).studentDatabaseDao
+        val dataSource1 = TuitionDatabase.getInstance(application).timetableDatabaseDao
+        val viewModelFactory = MainmenuViewModelFactory(dataSource1, application)
+
+
+        val mainmenuViewModel =
+            ViewModelProviders.of(
+                this, viewModelFactory).get(MainmenuViewModel::class.java)
+
+        val adapter = MainmenuAdapter(TimetableListener { classId ->
+            Toast.makeText(context,"${classId}",Toast.LENGTH_LONG).show()
+        })
+
+        mainmenuViewModel.timetables.observe(viewLifecycleOwner, Observer{
+            mainmenuViewModel.timetables.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    adapter.submitList(it)
+                }
+            })
+        })
+
+        binding.classList.adapter = adapter
 
         binding.txtUser.text = "Welcome : " + loggedUser
 
@@ -66,6 +91,20 @@ class MainmenuFragment : Fragment() {
             MainmenuFragmentDirections.actionMainmenuFragmentToAddcourseFragment2()
         )
         }
+
+        mainmenuViewModel.navigateToDetailClass.observe(this, Observer { night ->
+            night?.let {
+                this.findNavController().navigate(
+                    MainmenuFragmentDirections
+                        .actionMainmenuFragmentToClassdetailFragment(night))
+                mainmenuViewModel.onSleepDetailNavigated()
+            }
+        })
+
+
+        val manager = GridLayoutManager(activity, 2)
+
+        binding.classList.layoutManager = manager
 
         return binding.root
     }
@@ -88,9 +127,6 @@ class MainmenuFragment : Fragment() {
                     Toast.makeText(context, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
 
                     Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
-
-
-
 
                     true
                 } else false

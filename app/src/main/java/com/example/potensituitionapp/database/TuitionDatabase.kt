@@ -19,7 +19,7 @@ abstract class TuitionDatabase : RoomDatabase(){
     abstract val paymentDatabaseDao: PaymentDao
     abstract val adminDatabaseDao: AdminDao
     abstract val classRecordDatabaseDao: ClassRecordDao
-    abstract val ChapterDatabaseDao: ChapterDao
+    abstract val chapterDatabaseDao: ChapterDao
 
     companion object {
         @Volatile
