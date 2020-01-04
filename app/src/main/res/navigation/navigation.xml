@@ -92,15 +92,14 @@
             app:argType="string" />
         <action
             android:id="@+id/action_classdetailFragment_to_chapterFragment"
-            app:destination="@id/chapterFragment" />
+            app:destination="@+id/chapterFragment" />
     </fragment>
     <fragment
         android:id="@+id/chapterFragment"
         android:name="com.example.potensituitionapp.chapter.ChapterFragment"
         android:label="ChapterFragment" >
         <argument
-            android:name="chapter_num"
-            app:argType="integer"
-            android:defaultValue="0" />
+            android:name="chapternum"
+            app:argType="integer" />
     </fragment>
 </navigation>
