@@ -16,7 +16,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="180dp"
         android:layout_height="126dp"
-        android:background="@color/colorTimetable"
+        android:background="@color/grad"
         android:onClick="@{() -> clickListener.onClick(timetable)}"
         >
 

@@ -32,26 +32,26 @@ class TimetableAdapter: RecyclerView.Adapter<TimetableAdapter.ViewHolder>() {
         holder.day.text = item.classDay.toString()
 
         if(holder.day.text.equals("Monday")){
-            holder.back.setBackgroundResource(R.color.colorPrimary)
+            holder.back.setBackgroundResource(R.color.tt_monday)
         }
 
         else if(holder.day.text.equals("Tuesday")){
-            holder.back.setBackgroundResource(R.color.colorAccent)
+            holder.back.setBackgroundResource(R.color.tt_tuesday)
 
         }
 
         else if(holder.day.text.equals("Wednesday")){
-            holder.back.setBackgroundResource(R.color.colorTimetable)
+            holder.back.setBackgroundResource(R.color.tt_wednesday)
 
         }
 
         else if(holder.day.text.equals("Thursday")){
-            holder.back.setBackgroundResource(R.color.colorPrimaryDark)
+            holder.back.setBackgroundResource(R.color.tt_thursday)
 
         }
 
         else if(holder.day.text.equals("Friday")){
-            holder.back.setBackgroundColor(Color.YELLOW)
+            holder.back.setBackgroundResource(R.color.tt_friday)
 
         }
     }

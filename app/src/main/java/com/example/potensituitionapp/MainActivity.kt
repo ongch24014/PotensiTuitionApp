@@ -33,6 +33,7 @@ import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 
 
 class MainActivity : AppCompatActivity() {
@@ -58,7 +59,14 @@ class MainActivity : AppCompatActivity() {
 
         loggedUser = sharedPreferences.getString("loggedUser","")
 
-        NavigationUI.setupActionBarWithNavController(this,navController)
+
+        val appBarConfiguration = AppBarConfiguration.Builder(
+            R.id.mainmenuFragment,
+            R.id.titleFragment
+        ).build()
+
+        NavigationUI.setupActionBarWithNavController(this,navController,appBarConfiguration)
+
 
 //        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
 

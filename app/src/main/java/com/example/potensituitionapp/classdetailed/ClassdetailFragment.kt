@@ -63,7 +63,7 @@ class ClassdetailFragment : Fragment() {
 
         classdetailViewModel.navigateToDetailChapter.observe(this, Observer { night ->
             night?.let {
-                this.findNavController().navigate(ClassdetailFragmentDirections.actionClassdetailFragmentToChapterFragment(night))
+                this.findNavController().navigate(ClassdetailFragmentDirections.actionClassdetailFragmentToChapterFragment(night,class_ID))
                 classdetailViewModel.onChapterDetailNavigated()
             }
         })
