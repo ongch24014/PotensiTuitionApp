@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.potensituitionapp.R
+import com.example.potensituitionapp.databinding.FragmentEnrollmentBinding
 import com.example.potensituitionapp.databinding.FragmentTimetableBinding
 import kotlinx.android.synthetic.main.fragment_enrollment.view.*
 
@@ -44,11 +45,15 @@ class Enrollment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        val binding: FragmentEnrollmentBinding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_enrollment,container,false)
+
         val adapter =EnrollmentCourseAdapter()
-        val binding =
-                binding.course_list.adapter= adapter
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_enrollment, container, false)
+
+        binding.courseList.adapter = adapter
+
+        return binding.root
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
