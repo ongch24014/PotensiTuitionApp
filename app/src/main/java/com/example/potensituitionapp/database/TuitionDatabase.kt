@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(entities = arrayOf(Student::class,Course::class,Teacher::class,Attendance::class
 ,Timetable::class,Enrollment::class,Payment::class,Admin::class,ClassRecord::class
-,Chapter::class), version = 5, exportSchema = false)
+,Chapter::class), version = 9, exportSchema = false)
 abstract class TuitionDatabase : RoomDatabase(){
 
     abstract val studentDatabaseDao: StudentDatabaseDao
@@ -19,7 +19,7 @@ abstract class TuitionDatabase : RoomDatabase(){
     abstract val paymentDatabaseDao: PaymentDao
     abstract val adminDatabaseDao: AdminDao
     abstract val classRecordDatabaseDao: ClassRecordDao
-    abstract val ChapterDatabaseDao: ChapterDao
+    abstract val chapterDatabaseDao: ChapterDao
 
     companion object {
         @Volatile

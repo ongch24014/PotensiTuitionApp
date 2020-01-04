@@ -12,5 +12,4 @@ class TimetableViewModel(
 
     val timetables = database.getStudentTimeTable(loggedUser)
 
-
 }

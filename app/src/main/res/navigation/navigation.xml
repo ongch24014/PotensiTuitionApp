@@ -60,8 +60,8 @@
             android:id="@+id/action_mainmenuFragment_to_addcourseFragment2"
             app:destination="@id/addcourseFragment" />
         <action
-            android:id="@+id/action_mainmenuFragment_to_attendanceFragment"
-            app:destination="@id/attendanceFragment" />
+            android:id="@+id/action_mainmenuFragment_to_classdetailFragment"
+            app:destination="@id/classdetailFragment" />
     </fragment>
 
 
@@ -70,12 +70,6 @@
         android:name="com.example.potensituitionapp.addcourse.AddcourseFragment"
         android:label="AddcourseFragment"
         tools:layout="@layout/fragment_addcourse"
-        />
-    <fragment
-        android:id="@+id/attendanceFragment"
-        android:name="com.example.potensituitionapp.attendance.AttendanceFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         />
     <fragment
         android:id="@+id/studentprofileFragment2"
@@ -87,4 +81,29 @@
         android:name="com.example.potensituitionapp.timetable.TimetableFragment"
         android:label="fragment_timetable"
         tools:layout="@layout/fragment_timetable" />
+
+    <fragment
+        android:id="@+id/classdetailFragment"
+        android:name="com.example.potensituitionapp.classdetailed.ClassdetailFragment"
+        android:label="ClassdetailFragment"
+        tools:layout="@layout/fragment_classdetail">>
+        <argument
+            android:name="class_id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_classdetailFragment_to_chapterFragment"
+            app:destination="@+id/chapterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chapterFragment"
+        android:name="com.example.potensituitionapp.chapter.ChapterFragment"
+        android:label="ChapterFragment" >
+        <argument
+            android:name="chapternum"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/enrollment"
+        android:name="com.example.potensituitionapp.enrollment.Enrollment"
+        android:label="Enrollment" />
 </navigation>
