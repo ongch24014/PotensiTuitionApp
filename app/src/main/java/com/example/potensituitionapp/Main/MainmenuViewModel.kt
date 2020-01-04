@@ -16,11 +16,11 @@ class MainmenuViewModel(val database: TimetableDao,
 
     val timetables = database.getStudentTimeTable(MainActivity.loggedUser)
 
-    fun onSleepNightClicked(id: String) {
+    fun onClassDetailClicked(id: String) {
         _navigateToDetailClass.value = id
     }
 
-    fun onSleepDetailNavigated() {
+    fun onClassDetailNavigated() {
         _navigateToDetailClass.value = null
     }
 }

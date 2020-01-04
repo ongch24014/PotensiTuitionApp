@@ -62,6 +62,7 @@ class MainmenuFragment : Fragment() {
 
         val adapter = MainmenuAdapter(TimetableListener { classId ->
             Toast.makeText(context,"${classId}",Toast.LENGTH_LONG).show()
+            mainmenuViewModel.onClassDetailClicked(classId)
         })
 
         mainmenuViewModel.timetables.observe(viewLifecycleOwner, Observer{
@@ -97,7 +98,7 @@ class MainmenuFragment : Fragment() {
                 this.findNavController().navigate(
                     MainmenuFragmentDirections
                         .actionMainmenuFragmentToClassdetailFragment(night))
-                mainmenuViewModel.onSleepDetailNavigated()
+                mainmenuViewModel.onClassDetailNavigated()
             }
         })
 
