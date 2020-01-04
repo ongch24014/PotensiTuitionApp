@@ -21,6 +21,9 @@ data class Timetable (
     @ColumnInfo(name = "class_time")
     var classTime: Int,
 
+    @ColumnInfo(name = "class_day")
+    var classDay: String = "",
+
     @ColumnInfo(name = "teacher_ID")
     var teacherID: String = "",
 

@@ -26,6 +26,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_mainmenu.*
 import android.R.attr.tag
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.core.app.ComponentActivity
 import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
@@ -34,6 +36,8 @@ import androidx.navigation.fragment.findNavController
 
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var sharedPreferences: SharedPreferences
 
     private lateinit var binding: ActivityMainBinding
 
@@ -49,6 +53,10 @@ class MainActivity : AppCompatActivity() {
 
         navController = this.findNavController(R.id.myNavHostFragment)
         bottomNav.setupWithNavController(navController)
+
+        sharedPreferences = getPreferences(Context.MODE_PRIVATE)
+
+        loggedUser = sharedPreferences.getString("loggedUser","")
 
         NavigationUI.setupActionBarWithNavController(this,navController)
 
@@ -71,5 +79,24 @@ class MainActivity : AppCompatActivity() {
         bottomNav.visibility = View.VISIBLE
     }
 
+    override fun onResume() {
+        loggedUser = sharedPreferences.getString("loggedUser","")
+        super.onResume()
+    }
 
+    override fun onPause() {
+        with(sharedPreferences.edit()){
+            putString("loggedUser", loggedUser)
+            commit()
+        }
+        super.onPause()
+    }
+
+    override fun onStop() {
+        with(sharedPreferences.edit()){
+            putString("loggedUser", loggedUser)
+            commit()
+        }
+        super.onStop()
+    }
 }

@@ -6,9 +6,11 @@ import android.text.Html
 import android.text.Spanned
 import android.widget.TextView
 import androidx.core.text.HtmlCompat
+import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.potensituitionapp.database.Course
 import com.example.potensituitionapp.database.Student
+import com.example.potensituitionapp.database.Timetable
 
 fun formatStudents(students: List<Student>, resources: Resources): Spanned {
     val sb = StringBuilder()
@@ -55,4 +57,5 @@ fun formatCourses(courses: List<Course>, resources: Resources): Spanned {
 }
 
 class TextItemViewHolder(val textView: TextView): RecyclerView.ViewHolder(textView)
+
 

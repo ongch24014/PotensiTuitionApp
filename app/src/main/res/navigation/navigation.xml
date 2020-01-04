@@ -59,6 +59,9 @@
         <action
             android:id="@+id/action_mainmenuFragment_to_addcourseFragment2"
             app:destination="@id/addcourseFragment" />
+        <action
+            android:id="@+id/action_mainmenuFragment_to_classdetailFragment"
+            app:destination="@id/classdetailFragment" />
     </fragment>
 
 
@@ -78,4 +81,14 @@
         android:name="com.example.potensituitionapp.timetable.TimetableFragment"
         android:label="fragment_timetable"
         tools:layout="@layout/fragment_timetable" />
+
+    <fragment
+        android:id="@+id/classdetailFragment"
+        android:name="com.example.potensituitionapp.classdetailed.ClassdetailFragment"
+        android:label="ClassdetailFragment"
+        tools:layout="@layout/fragment_classdetail">>
+        <argument
+            android:name="class_id"
+            app:argType="string" />
+    </fragment>
 </navigation>
