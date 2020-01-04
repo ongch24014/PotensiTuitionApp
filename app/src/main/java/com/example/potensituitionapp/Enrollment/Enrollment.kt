@@ -3,16 +3,14 @@ package com.example.potensituitionapp.Enrollment
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.example.potensituitionapp.R
 import com.example.potensituitionapp.databinding.FragmentEnrollmentBinding
-import com.example.potensituitionapp.databinding.FragmentTimetableBinding
-import kotlinx.android.synthetic.main.fragment_enrollment.view.*
-import java.util.Observer
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -52,7 +50,7 @@ class Enrollment : Fragment() {
         val adapter =EnrollmentCourseAdapter()
 
         binding.courseList.adapter = adapter
-        EnrollmentViewModel.course.observe(viewLifecycleOwner, Observer {
+        val observe: Any = EnrollmentViewModel.courses.observe(viewLifecycleOwner, Observer {
             it?.let {
                 adapter.data = it
             }
