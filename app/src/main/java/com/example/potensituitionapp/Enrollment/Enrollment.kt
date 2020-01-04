@@ -50,7 +50,7 @@ class Enrollment : Fragment() {
             R.layout.fragment_enrollment,container,false)
 
         val adapter =EnrollmentCourseAdapter()
-        
+
         binding.courseList.adapter = adapter
         EnrollmentViewModel.course.observe(viewLifecycleOwner, Observer {
             it?.let {

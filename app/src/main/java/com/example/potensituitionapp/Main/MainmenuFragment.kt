@@ -23,6 +23,9 @@ import android.view.KeyEvent.KEYCODE_BACK
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.potensituitionapp.timetable.TimetableAdapter
 
