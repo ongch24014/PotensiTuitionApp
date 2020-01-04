@@ -45,7 +45,7 @@ class Enrollment : Fragment() {
     ): View? {
 
         val adapter =EnrollmentCourseAdapter()
-
+        val binding =
                 binding.course_list.adapter= adapter
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_enrollment, container, false)

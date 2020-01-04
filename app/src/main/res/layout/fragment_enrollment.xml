@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Enrollment.Enrollment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
         <variable
-            android:name="EnrollmentViewModel"
-            android:type="com.example.potensituitionapp.Enrollment.EnrollmentViewModel" />
+            name="Enrollment"
+            type="com.example.potensituitionapp.database.Course" />
     </data>
-    <!-- TODO: Update blank fragment layout -->
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/course_list"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <FrameLayout
 
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-    <?xml version="1.0" encoding="utf-8"?>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Enrollment.Enrollment">
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/course_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        <?xml version="1.0" encoding="utf-8"?>
 
 
-</FrameLayout>
+    </FrameLayout>
+</layout>
