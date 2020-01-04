@@ -89,8 +89,6 @@ class MainmenuFragment : Fragment() {
                     .actionMainmenuFragmentToTitleFragment())
         }
 
-
-
         mainmenuViewModel.navigateToDetailClass.observe(this, Observer { night ->
             night?.let {
                 this.findNavController().navigate(

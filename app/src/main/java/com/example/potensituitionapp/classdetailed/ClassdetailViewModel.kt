@@ -11,17 +11,21 @@ class ClassdetailViewModel(private val class_ID: String,
                            application: Application
 ) : AndroidViewModel(application) {
 
-    private val _navigateToDetailClass = MutableLiveData<String>()
-    val navigateToDetailClass
-        get() = _navigateToDetailClass
+    private val _navigateToDetailChapter = MutableLiveData<Int>()
+    val navigateToDetailChapter
+        get() = _navigateToDetailChapter
 
     val chapters = database.getAllChapter(class_ID)
 
-    fun onChapterDetailClicked(id: String) {
-        _navigateToDetailClass.value = id
+    fun onChapterDetailClicked(num: Int) {
+        _navigateToDetailChapter.value = num
     }
 
     fun onChapterDetailNavigated() {
-        _navigateToDetailClass.value = null
+        _navigateToDetailChapter.value = null
+    }
+
+    fun onChapterClicked(num: Int){
+        _navigateToDetailChapter.value = num
     }
 }

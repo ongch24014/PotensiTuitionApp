@@ -3,11 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="chapter"
+            type="com.example.potensituitionapp.database.Chapter"/>
+
+        <variable
+            name="clickListener"
+            type="com.example.potensituitionapp.classdetailed.ChapterListener" />
+
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#AEFDD1">
+        android:background="#AEFDD1"
+        android:onClick="@{() -> clickListener.onClick(chapter)}">
 
 
         <TextView
@@ -15,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Desc"
+            app:chapterDescString="@{chapter}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.073"
@@ -27,6 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chapter"
+            app:chapterNameString="@{chapter}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.077"

@@ -11,8 +11,10 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.potensituitionapp.Main.MainmenuFragment
+import com.example.potensituitionapp.Main.MainmenuFragmentDirections
 
 import com.example.potensituitionapp.R
 import com.example.potensituitionapp.database.TuitionDatabase
@@ -47,11 +49,24 @@ class ClassdetailFragment : Fragment() {
                 this, viewModelFactory
             ).get(ClassdetailViewModel::class.java)
 
-        val adapter = ClassdetailAdapter()
+
+        val adapter = ClassdetailAdapter(ChapterListener { classNum ->
+            Toast.makeText(context, "${classNum}", Toast.LENGTH_LONG).show()
+            classdetailViewModel.onChapterClicked(classNum)
+        })
 
         classdetailViewModel.chapters.observe(viewLifecycleOwner, Observer {
             it?.let {
-                adapter.data = it
+                adapter.submitList(it)
+            }
+        })
+
+        classdetailViewModel.navigateToDetailChapter.observe(this, Observer { night ->
+            night?.let {
+                this.findNavController().navigate(ClassdetailFragmentDirections.
+                    actionClassdetailFragmentToChapterFragment(night?))
+
+                classdetailViewModel.onChapterDetailNavigated()
             }
         })
 
