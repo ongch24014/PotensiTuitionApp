@@ -21,6 +21,7 @@ import com.example.potensituitionapp.database.TuitionDatabase
 import com.example.potensituitionapp.databinding.FragmentMainmenuBinding
 import android.view.KeyEvent.KEYCODE_BACK
 import androidx.fragment.app.FragmentManager
+import kotlinx.android.synthetic.main.fragment_mainmenu.*
 
 
 /**
@@ -50,6 +51,11 @@ class MainmenuFragment : Fragment() {
         val dataSource = TuitionDatabase.getInstance(application).studentDatabaseDao
 
         binding.txtUser.text = "Welcome : " + loggedUser
+
+        binding.AttendanceButton.setOnClickListener { view: View -> view.findNavController().navigate(
+            MainmenuFragmentDirections.actionMainmenuFragmentToAttendanceFragment()
+        )
+        }
 
         binding.LogoutButton.setOnClickListener{
             loggedUser = ""
