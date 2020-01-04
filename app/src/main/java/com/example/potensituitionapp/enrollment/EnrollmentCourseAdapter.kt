@@ -1,4 +1,4 @@
-package com.example.potensituitionapp.Enrollment
+package com.example.potensituitionapp.enrollment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

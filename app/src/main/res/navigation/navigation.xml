@@ -62,6 +62,9 @@
         <action
             android:id="@+id/action_mainmenuFragment_to_classdetailFragment"
             app:destination="@id/classdetailFragment" />
+        <action
+            android:id="@+id/action_mainmenuFragment_to_attendanceFragment2"
+            app:destination="@id/attendanceFragment2" />
     </fragment>
 
 
@@ -134,4 +137,12 @@
             android:name="audiopath"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/enrollment"
+        android:name="com.example.potensituitionapp.enrollment.Enrollment"
+        android:label="Enrollment" />
+    <fragment
+        android:id="@+id/attendanceFragment2"
+        android:name="com.example.potensituitionapp.attendance.AttendanceFragment"
+        android:label="AttendanceFragment" />
 </navigation>
