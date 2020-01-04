@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         var loggedUser = ""
+        var role = ""
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +59,7 @@ class MainActivity : AppCompatActivity() {
         sharedPreferences = getPreferences(Context.MODE_PRIVATE)
 
         loggedUser = sharedPreferences.getString("loggedUser","")
+        role = sharedPreferences.getString("role","")
 
 
         val appBarConfiguration = AppBarConfiguration.Builder(
@@ -89,12 +91,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         loggedUser = sharedPreferences.getString("loggedUser","")
+        role = sharedPreferences.getString("role","")
+
         super.onResume()
     }
 
     override fun onPause() {
         with(sharedPreferences.edit()){
             putString("loggedUser", loggedUser)
+            putString("role", role)
             commit()
         }
         super.onPause()
@@ -103,6 +108,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         with(sharedPreferences.edit()){
             putString("loggedUser", loggedUser)
+            putString("role", role)
             commit()
         }
         super.onStop()

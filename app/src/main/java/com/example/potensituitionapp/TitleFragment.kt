@@ -16,6 +16,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.potensituitionapp.databinding.FragmentTitleBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.potensituitionapp.MainActivity.Companion.loggedUser
+import com.example.potensituitionapp.MainActivity.Companion.role
 import com.example.potensituitionapp.database.*
 
 /**
@@ -47,8 +48,16 @@ class TitleFragment : Fragment() {
             (activity as MainActivity).setNavInvisible()
         }
         else{
-            (activity as MainActivity).setNavVisible()
-            findNavController().navigate(R.id.mainmenuFragment)
+            if(role.equals("Student")){
+                (activity as MainActivity).setNavVisible()
+                findNavController().navigate(R.id.mainmenuFragment)
+            }
+
+            else if(role.equals("Teacher")){
+                (activity as MainActivity).setNavInvisible()
+                findNavController().navigate(R.id.teachermainFragment)
+            }
+
         }
 
         binding.addData.setOnClickListener{
@@ -65,6 +74,7 @@ class TitleFragment : Fragment() {
         val userdb = TuitionDatabase.getInstance(application).studentDatabaseDao
         val enrolldb = TuitionDatabase.getInstance(application).enrollmentDatabaseDao
         val timetabledb = TuitionDatabase.getInstance(application).timetableDatabaseDao
+        val teacherdb = TuitionDatabase.getInstance(application).teacherDatabaseDao
 
 
         userdb.insert(Student(1,"S001","user","123"))
@@ -75,15 +85,19 @@ class TitleFragment : Fragment() {
         enrolldb.insert(Enrollment(4,"S001","C004","1"))
         enrolldb.insert(Enrollment(5,"S001","C005","1"))
 
-        timetabledb.insert(Timetable(1,"C001","Biology","Room 1",1,"Monday"))
-        timetabledb.insert(Timetable(2,"C002","Chemistry","Room 2",1,"Tuesday"))
-        timetabledb.insert(Timetable(3,"C003","Physics","Room 3",1,"Wednesday"))
-        timetabledb.insert(Timetable(4,"C004","English","Room 3",1,"Thursday"))
-        timetabledb.insert(Timetable(5,"C005","Chinese","Room 3",1,"Friday"))
+        timetabledb.insert(Timetable(1,"C001","Biology","Room 1",1,"Monday","T001"))
+        timetabledb.insert(Timetable(2,"C002","Chemistry","Room 2",1,"Tuesday","T002"))
+        timetabledb.insert(Timetable(3,"C003","Physics","Room 3",1,"Wednesday","T003"))
+        timetabledb.insert(Timetable(4,"C004","English","Room 3",1,"Thursday","T004"))
+        timetabledb.insert(Timetable(5,"C005","Chinese","Room 3",1,"Friday","T005"))
 
         chapterdb.insert(Chapter(1,"C001",1,"Life"))
         chapterdb.insert(Chapter(2,"C001",2,"Human Life"))
         chapterdb.insert(Chapter(3,"C001",3,"Organs"))
+
+        teacherdb.insert(Teacher(1,"T001","Ong Chun Heng","123","012-4726059","ocheng.90@gmail.com"))
+        teacherdb.insert(Teacher(2,"T002","teacher","123","012-4999959","999.90@gmail.com"))
+
     }
 
 

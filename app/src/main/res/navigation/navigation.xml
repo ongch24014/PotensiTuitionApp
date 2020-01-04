@@ -33,6 +33,11 @@
             app:destination="@id/mainmenuFragment"
             app:popUpTo="@+id/loginFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_teachermainFragment"
+            app:destination="@id/teachermainFragment"
+            app:popUpTo="@+id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -145,4 +150,12 @@
         android:id="@+id/attendanceFragment2"
         android:name="com.example.potensituitionapp.attendance.AttendanceFragment"
         android:label="AttendanceFragment" />
+    <fragment
+        android:id="@+id/teachermainFragment"
+        android:name="com.example.potensituitionapp.teacherpage.TeachermainFragment"
+        android:label="TeachermainFragment" >
+        <action
+            android:id="@+id/action_teachermainFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
 </navigation>

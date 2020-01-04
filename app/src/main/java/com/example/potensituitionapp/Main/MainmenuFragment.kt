@@ -27,6 +27,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.potensituitionapp.MainActivity.Companion.role
 import com.example.potensituitionapp.timetable.TimetableAdapter
 
 
@@ -79,7 +80,7 @@ class MainmenuFragment : Fragment() {
 
         binding.classList.adapter = adapter
 
-        binding.txtUser.text = "Welcome : " + loggedUser
+        //binding.txtUser.text = "Welcome : " + loggedUser
 
         binding.btnAttendance.setOnClickListener(){
             findNavController().navigate(MainmenuFragmentDirections.actionMainmenuFragmentToAttendanceFragment2())
@@ -87,6 +88,7 @@ class MainmenuFragment : Fragment() {
 
         binding.LogoutButton.setOnClickListener{
             loggedUser = ""
+            role = ""
             Toast.makeText(activity, R.string.logout_success, Toast.LENGTH_SHORT).show()
 
             (activity as MainActivity).setNavInvisible()
