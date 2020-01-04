@@ -102,4 +102,8 @@
             android:name="chapternum"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/enrollment"
+        android:name="com.example.potensituitionapp.enrollment.Enrollment"
+        android:label="Enrollment" />
 </navigation>

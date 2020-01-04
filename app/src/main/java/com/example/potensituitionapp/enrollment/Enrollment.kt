@@ -1,4 +1,4 @@
-package com.example.potensituitionapp.Enrollment
+package com.example.potensituitionapp.enrollment
 
 import android.content.Context
 import android.net.Uri
@@ -8,8 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import com.example.potensituitionapp.R
+import com.example.potensituitionapp.database.TuitionDatabase
 import com.example.potensituitionapp.databinding.FragmentEnrollmentBinding
+import com.example.potensituitionapp.timetable.TimetableViewModel
 import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -48,13 +51,18 @@ class Enrollment : Fragment() {
             R.layout.fragment_enrollment,container,false)
 
         val adapter =EnrollmentCourseAdapter()
-
+        val application =requireNotNull(this.activity).application
+        val dataSource = TuitionDatabase.getInstance(application).courseDatabaseDao
+        val viewModelFactory = EnrollmentViewModelFactory(dataSource,application )
         binding.courseList.adapter = adapter
-        val observe: Any = EnrollmentViewModel.courses.observe(viewLifecycleOwner, Observer {
-            it?.let {
-                adapter.data = it
-            }
-        })
+        val EnrollmentViewModel =
+            ViewModelProviders.of(
+                this, viewModelFactory).get(EnrollmentViewModel::class.java)
+         EnrollmentViewModel.courses.observe(viewLifecycleOwner ,androidx.lifecycle.Observer {
+             it?.let {
+             adapter.data = it
+         } })
+
         return binding.root
 
     }
