@@ -7,7 +7,8 @@ import com.example.potensituitionapp.database.Chapter
 @BindingAdapter("chapterNameString")
 fun TextView.setChapterNameString(item: Chapter?) {
     item?.let {
-        text = item.classID
+        val name:String = "Chapter " + item.chapterNum
+        text = name
     }
 }
 
