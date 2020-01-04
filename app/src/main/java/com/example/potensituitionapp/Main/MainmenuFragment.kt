@@ -81,6 +81,10 @@ class MainmenuFragment : Fragment() {
 
         binding.txtUser.text = "Welcome : " + loggedUser
 
+        binding.btnAttendance.setOnClickListener(){
+            findNavController().navigate(MainmenuFragmentDirections.actionMainmenuFragmentToAttendanceFragment2())
+        }
+
         binding.LogoutButton.setOnClickListener{
             loggedUser = ""
             Toast.makeText(activity, R.string.logout_success, Toast.LENGTH_SHORT).show()
