@@ -64,6 +64,11 @@ class RegisterFragment : Fragment() {
 
             dataSource.insert(stud)
 
+//            var student:Student = dataSource.getStudent1("user")
+//            student.password = "12345"
+//
+//            dataSource.update(student)
+
             backToHome()}
 
         return binding.root

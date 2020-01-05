@@ -86,11 +86,11 @@ class TitleFragment : Fragment() {
         enrolldb.insert(Enrollment(4,"S001","C004","1"))
         enrolldb.insert(Enrollment(5,"S001","C005","1"))
 
-        timetabledb.insert(Timetable(1,"C001","Biology","Room 1",1,"Monday","T001"))
-        timetabledb.insert(Timetable(2,"C002","Chemistry","Room 2",1,"Tuesday","T001"))
-        timetabledb.insert(Timetable(3,"C003","Physics","Room 3",1,"Wednesday","T003"))
-        timetabledb.insert(Timetable(4,"C004","English","Room 3",1,"Thursday","T004"))
-        timetabledb.insert(Timetable(5,"C005","Chinese","Room 3",1,"Friday","T005"))
+        timetabledb.insert(Timetable(1,"C001","Biology","Room 1","19:00 - 21:00","Monday","T001"))
+        timetabledb.insert(Timetable(2,"C002","Chemistry","Room 2","19:00 - 21:00","Tuesday","T001"))
+        timetabledb.insert(Timetable(3,"C003","Physics","Room 3","20:00 - 22:00","Wednesday","T003"))
+        timetabledb.insert(Timetable(4,"C004","English","Room 3","20:00 - 22:00","Thursday","T004"))
+        timetabledb.insert(Timetable(5,"C005","Chinese","Room 3","20:00 - 22:00","Friday","T005"))
 
         chapterdb.insert(Chapter(1,"C001",1,"Life"))
         chapterdb.insert(Chapter(2,"C001",2,"Human Life"))

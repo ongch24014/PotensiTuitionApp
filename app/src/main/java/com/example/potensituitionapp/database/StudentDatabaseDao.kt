@@ -20,6 +20,9 @@ interface StudentDatabaseDao {
     @Query("SELECT * from student_table WHERE name = :key")
     fun getStudent(key: String): Student?
 
+    @Query("SELECT * from student_table WHERE name = :key")
+    fun getStudent1(key: String): Student
+
     @Query("DELETE FROM student_table")
     fun clear()
 

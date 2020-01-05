@@ -19,7 +19,7 @@ data class Timetable (
     var classVenue: String = "",
 
     @ColumnInfo(name = "class_time")
-    var classTime: Int,
+    var classTime: String = "",
 
     @ColumnInfo(name = "class_day")
     var classDay: String = "",

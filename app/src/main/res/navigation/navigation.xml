@@ -193,5 +193,11 @@
         android:id="@+id/teachernewclassFragment"
         android:name="com.example.potensituitionapp.teachernewclass.TeachernewclassFragment"
         android:label="TeachernewclassFragment"
-        tools:layout="@layout/fragment_teachernewclass"/>
+        tools:layout="@layout/fragment_teachernewclass">
+        <action
+            android:id="@+id/action_teachernewclassFragment_to_teacherclassFragment"
+            app:destination="@id/teacherclassFragment"
+            app:popUpTo="@+id/teacherclassFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
