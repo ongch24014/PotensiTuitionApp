@@ -75,6 +75,7 @@ class TitleFragment : Fragment() {
         val enrolldb = TuitionDatabase.getInstance(application).enrollmentDatabaseDao
         val timetabledb = TuitionDatabase.getInstance(application).timetableDatabaseDao
         val teacherdb = TuitionDatabase.getInstance(application).teacherDatabaseDao
+        val teacherenrolldb = TuitionDatabase.getInstance(application).teacherEnrollDatabaseDao
 
 
         userdb.insert(Student(1,"S001","user","123"))
@@ -86,7 +87,7 @@ class TitleFragment : Fragment() {
         enrolldb.insert(Enrollment(5,"S001","C005","1"))
 
         timetabledb.insert(Timetable(1,"C001","Biology","Room 1",1,"Monday","T001"))
-        timetabledb.insert(Timetable(2,"C002","Chemistry","Room 2",1,"Tuesday","T002"))
+        timetabledb.insert(Timetable(2,"C002","Chemistry","Room 2",1,"Tuesday","T001"))
         timetabledb.insert(Timetable(3,"C003","Physics","Room 3",1,"Wednesday","T003"))
         timetabledb.insert(Timetable(4,"C004","English","Room 3",1,"Thursday","T004"))
         timetabledb.insert(Timetable(5,"C005","Chinese","Room 3",1,"Friday","T005"))
@@ -95,9 +96,11 @@ class TitleFragment : Fragment() {
         chapterdb.insert(Chapter(2,"C001",2,"Human Life"))
         chapterdb.insert(Chapter(3,"C001",3,"Organs"))
 
-        teacherdb.insert(Teacher(1,"T001","Ong Chun Heng","123","012-4726059","ocheng.90@gmail.com"))
+        teacherdb.insert(Teacher(1,"T001","ongch","123","012-4726059","ocheng.90@gmail.com"))
         teacherdb.insert(Teacher(2,"T002","teacher","123","012-4999959","999.90@gmail.com"))
 
+        teacherenrolldb.insert(TeacherEnroll(1,"T001","C001","Biology"))
+        teacherenrolldb.insert(TeacherEnroll(2,"T001","C002","Chemistry"))
     }
 
 

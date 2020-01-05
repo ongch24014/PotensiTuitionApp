@@ -176,6 +176,9 @@
             android:id="@+id/action_teacherclassFragment_to_teacherdetailclassFragment"
             app:destination="@id/teacherdetailclassFragment"
             app:popUpTo="@+id/teacherclassFragment" />
+        <action
+            android:id="@+id/action_teacherclassFragment_to_teachernewclassFragment"
+            app:destination="@id/teachernewclassFragment" />
     </fragment>
     <fragment
         android:id="@+id/teacherdetailclassFragment"
@@ -186,4 +189,9 @@
             android:name="classid"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/teachernewclassFragment"
+        android:name="com.example.potensituitionapp.teachernewclass.TeachernewclassFragment"
+        android:label="TeachernewclassFragment"
+        tools:layout="@layout/fragment_teachernewclass"/>
 </navigation>

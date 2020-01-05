@@ -23,6 +23,9 @@ interface TimetableDao {
     @Query("SELECT student_table.* FROM student_table INNER JOIN enrollment_table ON enrollment_table.student_ID = student_table.student_ID INNER JOIN timetable_table ON timetable_table.class_ID = enrollment_table.class_ID WHERE enrollment_table.class_ID = :key")
     fun getStudents(key: String): LiveData<List<Student>>
 
+    @Query("SELECT class_name FROM timetable_table WHERE teacher_ID = :key")
+    fun getClasses(key: String): List<String>
+
     @Query("DELETE FROM timetable_table")
     fun clear()
 

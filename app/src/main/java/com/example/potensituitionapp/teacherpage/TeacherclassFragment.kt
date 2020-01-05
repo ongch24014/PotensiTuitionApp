@@ -59,6 +59,13 @@ class TeacherclassFragment : Fragment() {
             }
         })
 
+        binding.btnAdd.setOnClickListener {
+            this.findNavController().navigate(
+                TeacherclassFragmentDirections
+                    .actionTeacherclassFragmentToTeachernewclassFragment()
+            )
+        }
+
 
 
         return binding.root
