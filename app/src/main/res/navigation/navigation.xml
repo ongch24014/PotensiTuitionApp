@@ -188,6 +188,11 @@
         <argument
             android:name="classid"
             app:argType="string" />
+        <action
+            android:id="@+id/action_teacherdetailclassFragment_to_teacherclassFragment"
+            app:destination="@id/teacherclassFragment"
+            app:popUpTo="@+id/teacherclassFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/teachernewclassFragment"

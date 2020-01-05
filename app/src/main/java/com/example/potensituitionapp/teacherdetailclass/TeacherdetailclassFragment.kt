@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -58,6 +59,13 @@ class TeacherdetailclassFragment : Fragment() {
         binding.lblDay.text = c?.classDay
         binding.lblVenue.text = c?.classVenue
         binding.lblTime.text = c?.classTime.toString()
+
+        binding.btnCancel.setOnClickListener {
+            dataSource.delete(classid)
+
+            Toast.makeText(activity, "Class deleted!", Toast.LENGTH_SHORT).show()
+
+        }
 
 
 

@@ -16,6 +16,9 @@ data class Enrollment (
     @ColumnInfo(name = "class_ID")
     var classID: String = "",
 
+    @ColumnInfo(name = "class_name")
+    var className: String = "",
+
     @ColumnInfo(name = "enrollment_date")
     var enrollmentDate: String = ""
 

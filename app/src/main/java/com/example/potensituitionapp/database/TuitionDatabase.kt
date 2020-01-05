@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(entities = arrayOf(Student::class,Course::class,Teacher::class,Attendance::class
 ,Timetable::class,Enrollment::class,Payment::class,Admin::class,ClassRecord::class
-,Chapter::class,TeacherEnroll::class), version = 11, exportSchema = false)
+,Chapter::class,TeacherEnroll::class), version = 12, exportSchema = false)
 abstract class TuitionDatabase : RoomDatabase(){
 
     abstract val studentDatabaseDao: StudentDatabaseDao

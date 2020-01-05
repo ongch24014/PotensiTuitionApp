@@ -1,10 +1,7 @@
 package com.example.potensituitionapp.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
 @Dao
 interface TimetableDao {
@@ -13,6 +10,9 @@ interface TimetableDao {
 
     @Update
     fun update(timetable: Timetable)
+
+    @Query("DELETE FROM timetable_table WHERE class_ID = :key")
+    fun delete(key: String)
 
     @Query("SELECT * from timetable_table WHERE num = :key")
     fun get(key: Long): Timetable?
@@ -46,5 +46,8 @@ interface TimetableDao {
 
     @Query("SELECT * from chapter_table WHERE class_ID = :key")
     fun getChapter(key: String): LiveData<Chapter>
+
+    @Query("SELECT class_name FROM enrollment_table WHERE student_ID = :key")
+    fun getStudentClass(key:String): LiveData<List<String>>
 
 }

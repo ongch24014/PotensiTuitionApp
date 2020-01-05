@@ -80,11 +80,11 @@ class TitleFragment : Fragment() {
 
         userdb.insert(Student(1,"S001","user","123"))
 
-        enrolldb.insert(Enrollment(1,"S001","C001","1"))
-        enrolldb.insert(Enrollment(2,"S001","C002","1"))
-        enrolldb.insert(Enrollment(3,"S001","C003","1"))
-        enrolldb.insert(Enrollment(4,"S001","C004","1"))
-        enrolldb.insert(Enrollment(5,"S001","C005","1"))
+        enrolldb.insert(Enrollment(1,"S001","C001","Biology"))
+        enrolldb.insert(Enrollment(2,"S001","C002","Chemistry"))
+        enrolldb.insert(Enrollment(3,"S001","C003","Physics"))
+        enrolldb.insert(Enrollment(4,"S001","C004","English"))
+        enrolldb.insert(Enrollment(5,"S001","C005","Chinese"))
 
         timetabledb.insert(Timetable(1,"C001","Biology","Room 1","19:00 - 21:00","Monday","T001"))
         timetabledb.insert(Timetable(2,"C002","Chemistry","Room 2","19:00 - 21:00","Tuesday","T001"))
