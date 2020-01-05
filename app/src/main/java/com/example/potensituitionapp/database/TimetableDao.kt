@@ -35,6 +35,9 @@ interface TimetableDao {
     @Query("SELECT * FROM timetable_table WHERE class_ID = :key")
     fun getSpecificTimetable(key:String): LiveData<List<Timetable>>
 
+    @Query("SELECT * from timetable_table WHERE teacher_ID = :key")
+    fun getTeacherClass(key: String): LiveData<List<Timetable>>
+
     @Query("SELECT * from chapter_table WHERE class_ID = :key")
     fun getChapter(key: String): LiveData<Chapter>
 

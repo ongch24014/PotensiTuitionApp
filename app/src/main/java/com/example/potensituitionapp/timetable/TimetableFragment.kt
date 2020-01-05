@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -29,7 +30,6 @@ class TimetableFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         (activity as AppCompatActivity).supportActionBar?.title = "Timetable"
-
         // Inflate the layout for this fragment
         val binding: FragmentTimetableBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_timetable,container,false)

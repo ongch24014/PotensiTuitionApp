@@ -22,8 +22,11 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.example.potensituitionapp.MainActivity
 import com.example.potensituitionapp.MainActivity.Companion.loggedUser
+import com.example.potensituitionapp.MainActivity.Companion.role
 import com.example.potensituitionapp.R
 import com.example.potensituitionapp.database.Student
+import com.example.potensituitionapp.database.Teacher
+import com.example.potensituitionapp.database.TeacherDao
 import com.example.potensituitionapp.database.TuitionDatabase
 import com.example.potensituitionapp.databinding.FragmentLoginBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -52,6 +55,7 @@ class LoginFragment : Fragment() {
         //Database
         val application = requireNotNull(this.activity).application
         val dataSource = TuitionDatabase.getInstance(application).studentDatabaseDao
+        val dataSource1 = TuitionDatabase.getInstance(application).teacherDatabaseDao
 
         //buttonClicked
         binding.LoginButton.setOnClickListener{
@@ -62,27 +66,50 @@ class LoginFragment : Fragment() {
             this.hideKeyboard()
 
             var stud: Student? = dataSource.getStudent(username)
+            var teach: Teacher? = dataSource1.getTeacher(username)
 
-            if(stud == null){
+            if(stud == null && teach == null){
                 Toast.makeText(activity, R.string.login_failed, Toast.LENGTH_SHORT).show()
                 Log.i("Result","No user found")
             }
             else{
-                if(stud.password.equals(password)){
-                    Toast.makeText(activity, R.string.login_success, Toast.LENGTH_SHORT).show()
+                if(stud!=null){
+                    if(stud!!.password.equals(password)){
+                        Toast.makeText(activity, R.string.login_success, Toast.LENGTH_SHORT).show()
 
-                    loggedUser = stud.studentID
+                        loggedUser = stud.studentID
+                        role = "Student"
+                        Log.i("Result","Successfully logged in")
 
-                    Log.i("Result","Successfully logged in")
+                        navigateToMainPage()
+                    }
 
-                    navigateToMainPage()
+                    else{
+                        Toast.makeText(activity, R.string.login_failed, Toast.LENGTH_SHORT).show()
+
+                        Log.i("Result","Invalid password")
+                    }
                 }
 
                 else{
-                    Toast.makeText(activity, R.string.login_failed, Toast.LENGTH_SHORT).show()
+                    if(teach!!.password.equals(password)){
+                        Toast.makeText(activity, R.string.login_success, Toast.LENGTH_SHORT).show()
 
-                    Log.i("Result","Invalid password")
+                        loggedUser = teach.teacherID
+                        role = "Teacher"
+
+                        navigateToTeacherPage()
+                    }
+
+                    else{
+                        Toast.makeText(activity, R.string.login_failed, Toast.LENGTH_SHORT).show()
+
+                        Log.i("Result","Invalid password")
+                    }
                 }
+
+
+
             }
         }
         return binding.root
@@ -94,6 +121,12 @@ class LoginFragment : Fragment() {
         this.findNavController().navigate(
             LoginFragmentDirections
                 .actionLoginFragmentToMainmenuFragment())
+    }
+
+    private fun navigateToTeacherPage(){
+        this.findNavController().navigate(
+            LoginFragmentDirections
+                .actionLoginFragmentToTeachermainFragment())
     }
 
     fun Fragment.hideKeyboard() {

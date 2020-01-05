@@ -15,7 +15,7 @@ interface TeacherDao {
     fun update(teacher: Teacher)
 
     @Query("SELECT * from teacher_table WHERE teacher_ID = :key")
-    fun get(key: Long): Teacher?
+    fun get(key: String): Teacher?
 
     @Query("SELECT * from teacher_table WHERE name = :key")
     fun getTeacher(key: String): Teacher?

@@ -33,6 +33,7 @@ import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 
 
 class MainActivity : AppCompatActivity() {
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         var loggedUser = ""
+        var role = ""
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,8 +59,16 @@ class MainActivity : AppCompatActivity() {
         sharedPreferences = getPreferences(Context.MODE_PRIVATE)
 
         loggedUser = sharedPreferences.getString("loggedUser","")
+        role = sharedPreferences.getString("role","")
 
-        NavigationUI.setupActionBarWithNavController(this,navController)
+
+        val appBarConfiguration = AppBarConfiguration.Builder(
+            R.id.mainmenuFragment,
+            R.id.titleFragment
+        ).build()
+
+        NavigationUI.setupActionBarWithNavController(this,navController,appBarConfiguration)
+
 
 //        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
 
@@ -81,12 +91,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         loggedUser = sharedPreferences.getString("loggedUser","")
+        role = sharedPreferences.getString("role","")
+
         super.onResume()
     }
 
     override fun onPause() {
         with(sharedPreferences.edit()){
             putString("loggedUser", loggedUser)
+            putString("role", role)
             commit()
         }
         super.onPause()
@@ -95,6 +108,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         with(sharedPreferences.edit()){
             putString("loggedUser", loggedUser)
+            putString("role", role)
             commit()
         }
         super.onStop()

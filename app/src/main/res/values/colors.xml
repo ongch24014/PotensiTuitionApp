@@ -4,4 +4,13 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorTimetable">#7FDDC9</color>
+    <color name="grad">#67EFC8</color>
+    <color name="tt_monday">#2196F3</color>
+    <color name="tt_tuesday">#E91E63</color>
+    <color name="tt_wednesday">#FF5722</color>
+    <color name="tt_thursday">#9C27B0</color>
+    <color name="tt_friday">#283593</color>
+    <color name="colorBlack">#111111</color>
+    <color name="colorPurple">#FFB300</color>
+    <color name="logout">#D81B60</color>
 </resources>

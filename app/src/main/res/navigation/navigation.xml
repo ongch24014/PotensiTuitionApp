@@ -33,6 +33,11 @@
             app:destination="@id/mainmenuFragment"
             app:popUpTo="@+id/loginFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_teachermainFragment"
+            app:destination="@id/teachermainFragment"
+            app:popUpTo="@+id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -95,15 +100,47 @@
             app:argType="string" />
         <action
             android:id="@+id/action_classdetailFragment_to_chapterFragment"
-            app:destination="@+id/chapterFragment" />
+            app:destination="@+id/chapterFragment"
+            app:popUpTo="@+id/classdetailFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/chapterFragment"
         android:name="com.example.potensituitionapp.chapter.ChapterFragment"
-        android:label="ChapterFragment" >
+        android:label="ChapterFragment"
+        tools:layout="@layout/fragment_chapter">
         <argument
             android:name="chapternum"
             app:argType="integer" />
+        <argument
+            android:name="classId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_chapterFragment_to_notesFragment"
+            app:destination="@id/notesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@+id/chapterFragment" />
+        <action
+            android:id="@+id/action_chapterFragment_to_audioFragment"
+            app:destination="@id/audioFragment"
+            app:popUpTo="@+id/chapterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.example.potensituitionapp.chapter.NotesFragment"
+        android:label="NotesFragment" >
+        <argument
+            android:name="notepath"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/audioFragment"
+        android:name="com.example.potensituitionapp.chapter.AudioFragment"
+        android:label="AudioFragment" >
+        <argument
+            android:name="audiopath"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/enrollment"
@@ -113,4 +150,12 @@
         android:id="@+id/attendanceFragment2"
         android:name="com.example.potensituitionapp.attendance.AttendanceFragment"
         android:label="AttendanceFragment" />
+    <fragment
+        android:id="@+id/teachermainFragment"
+        android:name="com.example.potensituitionapp.teacherpage.TeachermainFragment"
+        android:label="TeachermainFragment" >
+        <action
+            android:id="@+id/action_teachermainFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
 </navigation>

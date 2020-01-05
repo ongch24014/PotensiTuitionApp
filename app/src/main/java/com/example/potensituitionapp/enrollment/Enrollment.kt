@@ -58,10 +58,10 @@ class Enrollment : Fragment() {
         val EnrollmentViewModel =
             ViewModelProviders.of(
                 this, viewModelFactory).get(EnrollmentViewModel::class.java)
-         EnrollmentViewModel.courses.observe(viewLifecycleOwner ,androidx.lifecycle.Observer {
-             it?.let {
-             adapter.data = it
-         } })
+        EnrollmentViewModel.courses.observe(viewLifecycleOwner ,androidx.lifecycle.Observer {
+            it?.let {
+                adapter.data = it
+            } })
 
         return binding.root
 
