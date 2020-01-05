@@ -24,6 +24,6 @@ fun TextView.setTeacherNameString(item: Timetable?) {
 @BindingAdapter("layoutCons")
 fun ConstraintLayout.setTeacherNameString(item: Timetable?) {
     item?.let {
-        background = ContextCompat.getDrawable(context, R.color.tt_friday)
+        //background = ContextCompat.getDrawable(context, R.color.tt_friday)
     }
 }

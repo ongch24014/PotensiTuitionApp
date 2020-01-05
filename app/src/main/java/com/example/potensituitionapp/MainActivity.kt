@@ -64,7 +64,8 @@ class MainActivity : AppCompatActivity() {
 
         val appBarConfiguration = AppBarConfiguration.Builder(
             R.id.mainmenuFragment,
-            R.id.titleFragment
+            R.id.titleFragment,
+            R.id.teachermainFragment
         ).build()
 
         NavigationUI.setupActionBarWithNavController(this,navController,appBarConfiguration)

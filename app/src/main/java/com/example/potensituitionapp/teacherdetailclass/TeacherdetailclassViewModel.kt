@@ -8,14 +8,14 @@ import com.example.potensituitionapp.MainActivity.Companion.loggedUser
 import com.example.potensituitionapp.database.TimetableDao
 
 class TeacherdetailclassViewModel(val database: TimetableDao,
-                            application: Application
+                            application: Application, classid:String
 ) : AndroidViewModel(application) {
 
     private val _navigateToDetailClass = MutableLiveData<String>()
     val navigateToDetailClass
         get() = _navigateToDetailClass
 
-    val timetables = database.getTeacherClass(loggedUser)
+    val students = database.getStudents(classid)
 
     fun onClassDetailClicked(id: String) {
         _navigateToDetailClass.value = id

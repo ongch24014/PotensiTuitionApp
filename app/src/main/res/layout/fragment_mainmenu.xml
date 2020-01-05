@@ -22,7 +22,7 @@
             app:layout_constraintVertical_bias="0.023" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/class_list"
+            android:id="@+id/timetable_list"
             android:layout_width="377dp"
             android:layout_height="524dp"
             android:layout_marginBottom="44dp"

@@ -150,12 +150,40 @@
         android:id="@+id/attendanceFragment2"
         android:name="com.example.potensituitionapp.attendance.AttendanceFragment"
         android:label="AttendanceFragment" />
+
     <fragment
         android:id="@+id/teachermainFragment"
         android:name="com.example.potensituitionapp.teacherpage.TeachermainFragment"
-        android:label="TeachermainFragment" >
+        android:label="TeachermainFragment"
+        tools:layout="@layout/fragment_teachermain">
+        >
         <action
             android:id="@+id/action_teachermainFragment_to_titleFragment"
-            app:destination="@id/titleFragment" />
+            app:destination="@id/titleFragment"
+            app:popUpTo="@+id/titleFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_teachermainFragment_to_teacherclassFragment"
+            app:destination="@id/teacherclassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/teacherclassFragment"
+        android:name="com.example.potensituitionapp.teacherpage.TeacherclassFragment"
+        android:label="TeacherclassFragment"
+        tools:layout="@layout/fragment_teacherclass"
+    >
+        <action
+            android:id="@+id/action_teacherclassFragment_to_teacherdetailclassFragment"
+            app:destination="@id/teacherdetailclassFragment"
+            app:popUpTo="@+id/teacherclassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/teacherdetailclassFragment"
+        android:name="com.example.potensituitionapp.teacherdetailclass.TeacherdetailclassFragment"
+        android:label="TeacherdetailclassFragment"
+        tools:layout="@layout/fragment_teacherdetailclass">
+        <argument
+            android:name="classid"
+            app:argType="string" />
     </fragment>
 </navigation>

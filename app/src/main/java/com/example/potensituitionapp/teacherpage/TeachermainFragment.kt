@@ -41,18 +41,26 @@ class TeachermainFragment : Fragment() {
         binding.txtName.text = teach?.name.toString()
 
 
-            binding.logoutButton.setOnClickListener {
-                loggedUser = ""
-                role = ""
+
+
+        binding.logoutButton.setOnClickListener {
+            loggedUser = ""
+            role = ""
 
             Toast.makeText(activity, R.string.logout_success, Toast.LENGTH_SHORT).show()
 
             (activity as MainActivity).setNavInvisible()
 
-                this.findNavController().navigate(
-                    TeachermainFragmentDirections
-                        .actionTeachermainFragmentToTitleFragment())
+            this.findNavController().navigate(
+                TeachermainFragmentDirections
+                    .actionTeachermainFragmentToTitleFragment())
 
+        }
+
+        binding.btnViewClass.setOnClickListener {
+            this.findNavController().navigate(
+                TeachermainFragmentDirections.actionTeachermainFragmentToTeacherclassFragment()
+            )
         }
 
 

@@ -78,7 +78,7 @@ class MainmenuFragment : Fragment() {
             })
         })
 
-        binding.classList.adapter = adapter
+        binding.timetableList.adapter = adapter
 
         //binding.txtUser.text = "Welcome : " + loggedUser
 
@@ -110,7 +110,7 @@ class MainmenuFragment : Fragment() {
 
         val manager = GridLayoutManager(activity, 2)
 
-        binding.classList.layoutManager = manager
+        binding.timetableList.layoutManager = manager
 
         return binding.root
     }
