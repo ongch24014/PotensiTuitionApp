@@ -82,7 +82,7 @@ class MainmenuFragment : Fragment() {
 
         binding.txtUser.text = "Welcome : " + loggedUser
 
-        binding.btnAttendance.setOnClickListener(){
+        binding.btnattendanceS.setOnClickListener(){
             findNavController().navigate(MainmenuFragmentDirections.actionMainmenuFragmentToAttendanceFragment2())
         }
 

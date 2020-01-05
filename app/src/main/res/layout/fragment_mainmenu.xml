@@ -21,37 +21,43 @@
 
         <Button
             android:id="@+id/LogoutButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="107dp"
+            android:layout_height="56dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/mybutton"
             android:text="@string/logout_button"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/timetable_list"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.904"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.023" />
+            app:layout_constraintHorizontal_bias="0.82"
+            app:layout_constraintStart_toEndOf="@+id/btnattendance_s"
+            app:layout_constraintTop_toBottomOf="@+id/txtUser"
+            app:layout_constraintVertical_bias="0.736" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/timetable_list"
             android:layout_width="377dp"
             android:layout_height="524dp"
-            android:layout_marginBottom="44dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.823"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.922" />
 
         <Button
-            android:id="@+id/btnAttendance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="31dp"
-            android:layout_marginBottom="588dp"
+            android:id="@+id/btnattendance_s"
+            android:layout_width="107dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="110dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/my_button1"
             android:text="Attendance"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.895"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/timetable_list"
+            app:layout_constraintEnd_toStartOf="@+id/LogoutButton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/LogoutButton" />
+            app:layout_constraintTop_toBottomOf="@+id/txtUser"
+            app:layout_constraintVertical_bias="0.732" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
