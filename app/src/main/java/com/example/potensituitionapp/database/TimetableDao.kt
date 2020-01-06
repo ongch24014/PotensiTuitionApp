@@ -14,6 +14,9 @@ interface TimetableDao {
     @Query("DELETE FROM timetable_table WHERE class_ID = :key")
     fun delete(key: String)
 
+    @Query("DELETE FROM timetable_table WHERE class_ID = :key AND class_venue = :key1 AND class_day = :key2")
+    fun deleteSpec(key: String,key1:String,key2:String)
+
     @Query("SELECT * from timetable_table WHERE num = :key")
     fun get(key: Long): Timetable?
 
