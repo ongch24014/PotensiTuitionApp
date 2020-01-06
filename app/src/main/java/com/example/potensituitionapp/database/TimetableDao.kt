@@ -17,8 +17,8 @@ interface TimetableDao {
     @Query("SELECT * from timetable_table WHERE num = :key")
     fun get(key: Long): Timetable?
 
-    @Query("SELECT * from timetable_table WHERE class_ID = :key")
-    fun getTimetable(key: String): Timetable?
+    @Query("SELECT * from timetable_table WHERE class_ID = :key AND class_venue = :key1 AND class_day = :key2")
+    fun getTimetable(key: String,key1:String,key2:String): Timetable?
 
     @Query("SELECT student_table.* FROM student_table INNER JOIN enrollment_table ON enrollment_table.student_ID = student_table.student_ID INNER JOIN timetable_table ON timetable_table.class_ID = enrollment_table.class_ID WHERE enrollment_table.class_ID = :key")
     fun getStudents(key: String): LiveData<List<Student>>
@@ -49,5 +49,8 @@ interface TimetableDao {
 
     @Query("SELECT class_name FROM enrollment_table WHERE student_ID = :key")
     fun getStudentClass(key:String): LiveData<List<String>>
+
+    @Query("SELECT student_table.* FROM student_table INNER JOIN enrollment_table ON enrollment_table.student_ID = student_table.student_ID  WHERE enrollment_table.class_ID = :key")
+    fun getStudentfromClass(key: String): LiveData<List<Student>>
 
 }

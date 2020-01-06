@@ -1,5 +1,6 @@
 package com.example.potensituitionapp.teacherpage
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -25,12 +26,10 @@ class TeacherclassAdapter(val clickListener: TimetableListener): ListAdapter<Tim
 
     class ViewHolder private constructor(val binding: ListItemTimetableBinding) : RecyclerView.ViewHolder(binding.root){
 
-         fun bind(
-             item: Timetable,
-             clickListener: TimetableListener
-         ) {
+         fun bind(item: Timetable, clickListener: TimetableListener) {
              binding.clickListener = clickListener
              binding.timetable = item
+
              binding.executePendingBindings()
         }
 
@@ -57,6 +56,6 @@ class TimetableDiffCallback : DiffUtil.ItemCallback<Timetable>() {
     }
 }
 
-class TimetableListener(val clickListener: (classId: String) -> Unit){
-    fun onClick(timetable: Timetable) = clickListener(timetable.classID)
+class TimetableListener(val clickListener: (classId: Timetable) -> Unit){
+    fun onClick(timetable: Timetable) = clickListener(timetable)
 }

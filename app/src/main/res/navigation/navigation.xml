@@ -83,7 +83,14 @@
         android:id="@+id/studentprofileFragment2"
         android:name="com.example.potensituitionapp.userprofile.StudentprofileFragment"
         android:label="fragment_studentprofile"
-        tools:layout="@layout/fragment_studentprofile" />
+        tools:layout="@layout/fragment_studentprofile" >
+        <action
+            android:id="@+id/action_studentprofileFragment2_to_enrollment"
+            app:destination="@id/enrollment" />
+        <action
+            android:id="@+id/action_studentprofileFragment2_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/timetableFragment2"
         android:name="com.example.potensituitionapp.timetable.TimetableFragment"
@@ -196,6 +203,11 @@
             app:destination="@id/teacherclassFragment"
             app:popUpTo="@+id/teacherclassFragment"
             app:popUpToInclusive="false" />
+        <argument
+            android:name="classvenue"
+            app:argType="string" />
+        <argument android:name="classday"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/teachernewclassFragment"
