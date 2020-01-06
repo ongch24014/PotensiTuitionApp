@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.example.potensituitionapp.MainActivity
@@ -35,6 +36,7 @@ class TeachermainFragment : Fragment() {
         val application = requireNotNull(this.activity).application
         val dataSource = TuitionDatabase.getInstance(application).teacherDatabaseDao
 
+        (activity as AppCompatActivity).supportActionBar?.title = ""
 
 
         val teach:Teacher? = dataSource.get(loggedUser)

@@ -28,7 +28,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/const_lay"
-            android:layout_width="348dp"
+            android:layout_width="370dp"
             android:layout_height="550dp"
             android:background="@drawable/menu_curve"
             app:layout_constraintBottom_toBottomOf="parent"
