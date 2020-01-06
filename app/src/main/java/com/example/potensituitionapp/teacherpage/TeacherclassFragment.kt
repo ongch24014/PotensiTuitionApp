@@ -2,6 +2,7 @@ package com.example.potensituitionapp.teacherpage
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -39,14 +40,15 @@ class TeacherclassFragment : Fragment() {
                 this, viewModelFactory).get(TeacherclassViewModel::class.java)
 
         val adapter = TeacherclassAdapter(TimetableListener { nightId ->
-            Toast.makeText(context, "${nightId}", Toast.LENGTH_LONG).show()
             teacherclassViewModel.onClassDetailClicked(nightId)
         })
 
         teacherclassViewModel.navigateToDetailClass.observe(this, Observer { night -> night?.let {
+            var classid:String = night.classID
+            Log.i("Hey",night.classVenue+night.classDay)
             this.findNavController().navigate(
                 TeacherclassFragmentDirections
-                    .actionTeacherclassFragmentToTeacherdetailclassFragment(night))
+                    .actionTeacherclassFragmentToTeacherdetailclassFragment(classid))
             teacherclassViewModel.onClassDetailNavigated()
 
         } })
