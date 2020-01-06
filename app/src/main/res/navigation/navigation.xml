@@ -165,6 +165,9 @@
         <action
             android:id="@+id/action_teachermainFragment_to_teacherclassFragment"
             app:destination="@id/teacherclassFragment" />
+        <action
+            android:id="@+id/action_teachermainFragment_to_attendanceFragment_T"
+            app:destination="@id/attendanceFragment_T" />
     </fragment>
     <fragment
         android:id="@+id/teacherclassFragment"
@@ -205,4 +208,8 @@
             app:popUpTo="@+id/teacherclassFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/attendanceFragment_T"
+        android:name="com.example.potensituitionapp.attendance.AttendanceFragment_T"
+        android:label="AttendanceFragment_T" />
 </navigation>
