@@ -33,7 +33,10 @@ class TeacherdetailclassFragment : Fragment() {
             R.layout.fragment_teacherdetailclass, container, false)
 
         val arguments = TeacherdetailclassFragmentArgs.fromBundle(arguments)
+
         val classid:String = arguments.classid
+        val classvenue:String = arguments.classvenue
+        val classday:String = arguments.classday
 
         val application = requireNotNull(this.activity).application
         val dataSource = TuitionDatabase.getInstance(application).timetableDatabaseDao
@@ -53,7 +56,7 @@ class TeacherdetailclassFragment : Fragment() {
         })
 
 
-        val c : Timetable? = dataSource.getTimetable(classid)
+        val c : Timetable? = dataSource.getTimetable(classid,classvenue,classday)
 
         binding.lblTitle.text = c?.className
         binding.lblDay.text = c?.classDay

@@ -15,7 +15,7 @@ class TeacherdetailclassViewModel(val database: TimetableDao,
     val navigateToDetailClass
         get() = _navigateToDetailClass
 
-    val students = database.getStudents(classid)
+    val students = database.getStudentfromClass(classid)
 
     fun onClassDetailClicked(id: String) {
         _navigateToDetailClass.value = id

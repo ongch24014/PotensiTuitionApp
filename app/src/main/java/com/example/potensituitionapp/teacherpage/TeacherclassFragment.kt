@@ -48,7 +48,7 @@ class TeacherclassFragment : Fragment() {
             Log.i("Hey",night.classVenue+night.classDay)
             this.findNavController().navigate(
                 TeacherclassFragmentDirections
-                    .actionTeacherclassFragmentToTeacherdetailclassFragment(classid))
+                    .actionTeacherclassFragmentToTeacherdetailclassFragment(classid,night.classVenue,night.classDay))
             teacherclassViewModel.onClassDetailNavigated()
 
         } })

@@ -200,6 +200,11 @@
             app:destination="@id/teacherclassFragment"
             app:popUpTo="@+id/teacherclassFragment"
             app:popUpToInclusive="false" />
+        <argument
+            android:name="classvenue"
+            app:argType="string" />
+        <argument android:name="classday"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/teachernewclassFragment"
