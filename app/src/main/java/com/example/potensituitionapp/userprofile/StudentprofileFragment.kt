@@ -32,11 +32,13 @@ class StudentprofileFragment : Fragment() {
         val binding:FragmentStudentprofileBinding= DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_studentprofile, container, false)
+
         binding.btnEnrollment.setOnClickListener {
             this.findNavController().navigate(
                     StudentprofileFragmentDirections.actionStudentprofileFragment2ToEnrollment()
             )
         }
+
         binding.logoutButton.setOnClickListener {
             MainActivity.loggedUser = ""
             MainActivity.role = ""
@@ -49,7 +51,7 @@ class StudentprofileFragment : Fragment() {
                 StudentprofileFragmentDirections.actionStudentprofileFragment2ToLoginFragment())
 
         }
-        return inflater.inflate(R.layout.fragment_studentprofile, container, false)
+        return binding.root
     }
 
 
