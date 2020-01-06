@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 
 import com.example.potensituitionapp.R
 import com.example.potensituitionapp.database.Timetable
@@ -64,15 +65,15 @@ class TeacherdetailclassFragment : Fragment() {
         binding.lblTime.text = c?.classTime.toString()
 
         binding.btnCancel.setOnClickListener {
-            dataSource.delete(classid)
+            dataSource.deleteSpec(classid,classvenue,classday)
 
             Toast.makeText(activity, "Class deleted!", Toast.LENGTH_SHORT).show()
 
+            this.findNavController().navigate(
+                TeacherdetailclassFragmentDirections.actionTeacherdetailclassFragmentToTeacherclassFragment()
+            )
+
         }
-
-
-
-
 
         return binding.root
     }

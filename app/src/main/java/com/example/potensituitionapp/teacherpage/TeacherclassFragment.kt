@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -34,6 +35,8 @@ class TeacherclassFragment : Fragment() {
         val application = requireNotNull(this.activity).application
         val dataSource1 = TuitionDatabase.getInstance(application).timetableDatabaseDao
         val viewModelFactory = TeacherclassViewModelFactory(dataSource1, application)
+
+        (activity as AppCompatActivity).supportActionBar?.title = ""
 
         val teacherclassViewModel =
             ViewModelProviders.of(
@@ -67,8 +70,6 @@ class TeacherclassFragment : Fragment() {
                     .actionTeacherclassFragmentToTeachernewclassFragment()
             )
         }
-
-
 
         return binding.root
     }
