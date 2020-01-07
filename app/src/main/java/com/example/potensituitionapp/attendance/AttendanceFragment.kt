@@ -16,19 +16,6 @@ open class AttendanceFragment() : Fragment() {
         val binding: FragmentAttendanceBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_attendance, container, false)
 
-        binding.tblMain.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabReselected(p0: TabLayout.Tab?) {
-                println(binding.tblMain.selectedTabPosition)
-            }
-
-            override fun onTabUnselected(p0: TabLayout.Tab?) {
-                println(binding.tblMain.selectedTabPosition)
-            }
-
-            override fun onTabSelected(p0: TabLayout.Tab?) {
-                println(binding.tblMain.selectedTabPosition)
-            }
-        })
         return binding.root
     }
 }

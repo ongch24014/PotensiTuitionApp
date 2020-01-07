@@ -14,27 +14,80 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tblMain"
-            android:layout_width="422dp"
-            android:layout_height="wrap_content"
+        <EditText
+            android:id="@+id/editText7"
+            android:layout_width="87dp"
+            android:layout_height="91dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="87dp"
+            android:layout_height="91dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/editText5"
+            app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/Attendance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Attendance" />
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="87dp"
+            android:layout_height="91dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/editText6"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/Overoll"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Overoll" />
+        <EditText
+            android:id="@+id/editText6"
+            android:layout_width="87dp"
+            android:layout_height="91dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/editText7"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        </com.google.android.material.tabs.TabLayout>
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="272dp"
+            android:text="Sign"
+            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintHorizontal_bias="0.853"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="272dp"
+            android:layout_marginEnd="100dp"
+            android:text="Overoll"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
