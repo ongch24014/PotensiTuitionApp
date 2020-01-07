@@ -179,6 +179,12 @@
         <action
             android:id="@+id/action_teachermainFragment_to_attendanceFragment_T"
             app:destination="@id/attendanceFragment_T" />
+        <action
+            android:id="@+id/action_teachermainFragment_to_attendanceFragment_T2"
+            app:destination="@id/attendanceFragment_T" />
+        <action
+            android:id="@+id/action_teachermainFragment_to_attendance_T"
+            app:destination="@id/attendance_T" />
     </fragment>
     <fragment
         android:id="@+id/teacherclassFragment"
@@ -232,4 +238,8 @@
         android:id="@+id/attendanceFragment_T"
         android:name="com.example.potensituitionapp.attendance.AttendanceFragment_T"
         android:label="AttendanceFragment_T" />
+    <fragment
+        android:id="@+id/attendance_T"
+        android:name="Attendance_T"
+        android:label="Attendance_T" />
 </navigation>
