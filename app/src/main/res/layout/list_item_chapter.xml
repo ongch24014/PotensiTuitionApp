@@ -18,8 +18,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#AEFDD1"
+        android:layout_height="100dp"
+        android:background="#FFFFFF"
         android:onClick="@{() -> clickListener.onClick(chapter)}">
 
 
@@ -33,41 +33,50 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.073"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.648" />
+            app:layout_constraintTop_toBottomOf="@+id/chapter_name"
+            app:layout_constraintVertical_bias="0.261" />
 
         <TextView
             android:id="@+id/chapter_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chapter"
+            android:textSize="18sp"
             app:chapterNameString="@{chapter}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.077"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.243" />
+            app:layout_constraintVertical_bias="0.197" />
 
         <LinearLayout
             android:id="@+id/linearLayout3"
-            android:layout_width="409dp"
-            android:layout_height="9dp"
-            android:layout_marginEnd="1dp"
-            android:background="#FFFFFF"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <LinearLayout
-            android:layout_width="410dp"
-            android:layout_height="10dp"
-            android:layout_marginTop="60dp"
+            android:layout_width="411dp"
+            android:layout_height="11dp"
             android:background="#FFFFFF"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3"></LinearLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            app:linel="@{chapter}" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="#43A7A7A7" />
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
