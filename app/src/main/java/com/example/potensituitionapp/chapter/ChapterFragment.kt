@@ -59,10 +59,6 @@ class ChapterFragment : Fragment() {
                     actionChapterFragmentToAudioFragment(chap.chapterAudio))
         }
 
-
-
-
-
         return binding.root
     }
 
