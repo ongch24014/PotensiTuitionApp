@@ -13,14 +13,21 @@
         <action
             android:id="@+id/action_titleFragment_to_loginFragment"
             app:destination="@id/loginFragment"
-            app:popUpToInclusive="false" />
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_titleFragment_to_registerFragment"
             app:destination="@id/registerFragment"
             app:popUpTo="@+id/titleFragment" />
         <action
             android:id="@+id/action_titleFragment_to_mainmenuFragment2"
-            app:destination="@id/mainmenuFragment" />
+            app:destination="@id/mainmenuFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment
@@ -31,13 +38,21 @@
         <action
             android:id="@+id/action_loginFragment_to_mainmenuFragment"
             app:destination="@id/mainmenuFragment"
-            app:popUpTo="@+id/loginFragment"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_loginFragment_to_teachermainFragment"
             app:destination="@id/teachermainFragment"
-            app:popUpTo="@+id/loginFragment"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment
@@ -59,14 +74,20 @@
         <action
             android:id="@+id/action_mainmenuFragment_to_titleFragment"
             app:destination="@id/titleFragment"
-            app:popUpTo="@+id/titleFragment"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_mainmenuFragment_to_addcourseFragment2"
             app:destination="@id/addcourseFragment" />
         <action
             android:id="@+id/action_mainmenuFragment_to_classdetailFragment"
-            app:destination="@id/classdetailFragment" />
+            app:destination="@id/classdetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_mainmenuFragment_to_attendanceFragment2"
             app:destination="@id/attendanceFragment2" />
@@ -108,6 +129,10 @@
         <action
             android:id="@+id/action_classdetailFragment_to_chapterFragment"
             app:destination="@+id/chapterFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@+id/classdetailFragment" />
     </fragment>
 
