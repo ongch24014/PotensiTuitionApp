@@ -6,59 +6,40 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF">
+        android:background="@drawable/grad_yellow">
 
-        <TextView
-            android:id="@+id/txtUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="363dp"
+            android:layout_height="634dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/menu_curve"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.068"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.022" />
+            app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/LogoutButton"
-            android:layout_width="107dp"
-            android:layout_height="56dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/mybutton"
-            android:text="@string/logout_button"
-            android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/timetable_list"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.82"
-            app:layout_constraintStart_toEndOf="@+id/btnattendance_s"
-            app:layout_constraintTop_toBottomOf="@+id/txtUser"
-            app:layout_constraintVertical_bias="0.736" />
+            <Button
+                android:id="@+id/btnattendance_s"
+                android:layout_width="332dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/my_button1"
+                android:text="Attendance"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toTopOf="@+id/timetable_list"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/timetable_list"
-            android:layout_width="377dp"
-            android:layout_height="524dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.823"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.922" />
-
-        <Button
-            android:id="@+id/btnattendance_s"
-            android:layout_width="107dp"
-            android:layout_height="56dp"
-            android:layout_marginEnd="110dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/my_button1"
-            android:text="Attendance"
-            android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/timetable_list"
-            app:layout_constraintEnd_toStartOf="@+id/LogoutButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtUser"
-            app:layout_constraintVertical_bias="0.732" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/timetable_list"
+                android:layout_width="343dp"
+                android:layout_height="517dp"
+                android:layout_marginStart="21dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

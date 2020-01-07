@@ -30,7 +30,7 @@ fun TextView.setClassNameString(item: Timetable?) {
         }
 
         else if(item.className.equals("Chinese")){
-            setTextColor(ContextCompat.getColor(context, R.color.tt_friday))
+            setTextColor(ContextCompat.getColor(context, R.color.tt_tuesday))
         }
     }
 }
@@ -45,7 +45,27 @@ fun TextView.setTeacherNameString(item: Timetable?) {
 @BindingAdapter("layoutCons")
 fun ConstraintLayout.setTeacherNameString(item: Timetable?) {
     item?.let {
-        //background = ContextCompat.getDrawable(context, R.color.tt_friday)
+        item?.let {
+            if(item.className.equals("Biology")) {
+                background = ContextCompat.getDrawable(context, R.color.tt_monday)
+            }
+
+            else if(item.className.equals("Chemistry")){
+                background = ContextCompat.getDrawable(context, R.color.tt_thursday)
+            }
+
+            else if(item.className.equals("Physics")){
+                background = ContextCompat.getDrawable(context, R.color.tt_wednesday)
+            }
+
+            else if(item.className.equals("English")){
+                background = ContextCompat.getDrawable(context, R.color.design_default_color_primary)
+            }
+
+            else if(item.className.equals("Chinese")){
+                background = ContextCompat.getDrawable(context, R.color.tt_tuesday)
+            }
+        }
     }
 }
 
@@ -69,7 +89,7 @@ fun LinearLayout.setLinearl(item: Timetable?) {
         }
 
         else if(item.className.equals("Chinese")){
-            background = ContextCompat.getDrawable(context, R.color.tt_friday)
+            background = ContextCompat.getDrawable(context, R.color.tt_tuesday)
         }
     }
 }
