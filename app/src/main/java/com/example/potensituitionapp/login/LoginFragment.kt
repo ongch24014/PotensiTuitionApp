@@ -23,6 +23,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.potensituitionapp.MainActivity
 import com.example.potensituitionapp.MainActivity.Companion.loggedUser
 import com.example.potensituitionapp.MainActivity.Companion.role
+import com.example.potensituitionapp.MainActivity.Companion.user_namename
 import com.example.potensituitionapp.R
 import com.example.potensituitionapp.database.Student
 import com.example.potensituitionapp.database.Teacher
@@ -81,6 +82,7 @@ class LoginFragment : Fragment() {
 
                         loggedUser = stud.studentID
                         role = "Student"
+                        user_namename = stud.name
                         Log.i("Result","Successfully logged in")
 
                         navigateToMainPage()
