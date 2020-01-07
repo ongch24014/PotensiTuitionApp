@@ -57,6 +57,8 @@ class LoginFragment : Fragment() {
         val dataSource = TuitionDatabase.getInstance(application).studentDatabaseDao
         val dataSource1 = TuitionDatabase.getInstance(application).teacherDatabaseDao
 
+        (activity as AppCompatActivity).supportActionBar?.title = "Login"
+
         //buttonClicked
         binding.LoginButton.setOnClickListener{
 
