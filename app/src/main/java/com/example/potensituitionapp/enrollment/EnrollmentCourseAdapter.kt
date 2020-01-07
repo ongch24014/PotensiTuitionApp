@@ -1,43 +1,59 @@
 package com.example.potensituitionapp.enrollment
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.potensituitionapp.R
-import com.example.potensituitionapp.TextItemViewHolder
 import com.example.potensituitionapp.database.Course
+import com.example.potensituitionapp.databinding.ListItemCoursesBinding
 
-class EnrollmentCourseAdapter: RecyclerView.Adapter<EnrollmentCourseAdapter.ViewHolder>() {
-
-    var data =listOf<Course>()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
-
-    override fun getItemCount() = data.size
+class EnrollmentCourseAdapter(val clickListener: CourseListener):
+    ListAdapter<Course,EnrollmentCourseAdapter.ViewHolder>(CourseDiffCallback()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = data[position]
-
-        holder.courseName.text = item.courseName
-        holder.courseDesc.text = item.courseDescripton
+        val item = getItem(position)
+        holder.bind(getItem(position)!!, clickListener)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        val view = layoutInflater
-            .inflate(R.layout.list_item_courses, parent, false)
-        return ViewHolder(view)
+        return ViewHolder.from(parent)
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val courseName: TextView = itemView.findViewById(R.id.txtName)
-        val courseDesc: TextView = itemView.findViewById(R.id.txtDesc)
+    class ViewHolder private constructor(val binding: ListItemCoursesBinding) : RecyclerView.ViewHolder(binding.root){
+
+         fun bind(
+             item: Course,
+             clickListener: CourseListener
+         ) {
+            binding.course = item
+             binding.clickListener = clickListener
+             binding.executePendingBindings()
+        }
+
+        companion object {
+             fun from(parent: ViewGroup): ViewHolder {
+                val layoutInflater = LayoutInflater.from(parent.context)
+                val binding = ListItemCoursesBinding.inflate(layoutInflater,parent,false)
+                return ViewHolder(binding)
+            }
+        }
+
+    }
+}
+
+class CourseDiffCallback : DiffUtil.ItemCallback<Course>() {
+    override fun areItemsTheSame(oldItem: Course, newItem: Course): Boolean {
+        return oldItem.courseID == newItem.courseID
+
     }
 
+    override fun areContentsTheSame(oldItem: Course, newItem: Course): Boolean {
+        return oldItem == newItem
+    }
 
+}
 
+class CourseListener(val clickListener: (courseId: String) -> Unit){
+    fun onClick(course:Course) = clickListener(course.courseID)
 }

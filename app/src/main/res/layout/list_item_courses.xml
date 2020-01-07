@@ -3,10 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
+        <variable
+            name="course"
+            type="com.example.potensituitionapp.database.Course"/>
+
+        <variable
+            name="clickListener"
+            type="com.example.potensituitionapp.enrollment.CourseListener" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="300dp"
         android:layout_height="157dp"
-        android:background="#98F895">
+        android:background="#98F895"
+        app:constLayout="@{course}"
+        android:onClick="@{() -> clickListener.onClick(course)}">
 
         <LinearLayout
             android:id="@+id/linearLayout5"
@@ -29,23 +41,25 @@
 
             <TextView
                 android:id="@+id/txtName"
-                android:layout_width="0dp"
-                android:layout_height="34dp"
+                android:layout_width="264dp"
+                android:layout_height="32dp"
                 android:layout_marginTop="11dp"
                 android:text="TextView"
                 android:textSize="24sp"
                 android:textStyle="bold"
+                app:courseNameString="@{course}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/txtDesc"
-                android:layout_width="0dp"
-                android:layout_height="23dp"
+                android:layout_width="264dp"
+                android:layout_height="52dp"
                 android:layout_marginTop="12dp"
                 android:text="TextView"
-                android:textSize="18sp"
+                android:textSize="16sp"
+                app:courseNameDesc="@{course}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.523"
                 app:layout_constraintStart_toStartOf="parent"
