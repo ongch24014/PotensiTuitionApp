@@ -7,85 +7,88 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#004D3838">
-
-        <LinearLayout
-            android:id="@+id/linearLayout4"
-            android:layout_width="410dp"
-            android:layout_height="250dp"
-            android:background="@drawable/grad"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="225dp"
-                app:srcCompat="@android:drawable/sym_def_app_icon" />
-        </LinearLayout>
+        android:background="#194D3838">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="363dp"
-            android:layout_height="495dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="1dp"
-            android:background="#FFFCFC"
+            android:id="@+id/constraintLayout4"
+            android:layout_width="0dp"
+            android:layout_height="233dp"
+            android:background="@drawable/grad_yellow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="358dp"
+            android:layout_height="517dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/menu_curve"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/constraintLayout4"
+            app:layout_constraintVertical_bias="1.0">
 
             <Button
                 android:id="@+id/logoutButton"
                 android:layout_width="0dp"
-                android:layout_height="32dp"
+                android:layout_height="41dp"
                 android:layout_marginBottom="72dp"
-                android:background="@drawable/mybutton"
+                android:background="#EC407A"
                 android:shadowColor="#A53636"
                 android:text="@string/logout_button"
                 android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/txtName"
-                android:layout_width="334dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="139dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="166dp"
-                android:gravity="center"
-                android:text="@string/app_name"
-                android:textColor="#FC000000"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.445"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/btnEnrollment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="264dp"
+                android:layout_marginBottom="328dp"
+                android:background="#B3E5FC"
                 android:shadowDx="10"
                 android:text="Enroll"
                 app:layout_constraintBottom_toTopOf="@+id/logoutButton"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
                 android:id="@+id/btnattendance_t"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#00FFFFFF"
                 android:text="View Attendance"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnEnrollment" />
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="356dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="2dp"
+                android:background="#42A5F5"
+                app:layout_constraintBottom_toTopOf="@+id/btnEnrollment"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="356dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="2dp"
+                android:background="#42A5F5"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnEnrollment" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
