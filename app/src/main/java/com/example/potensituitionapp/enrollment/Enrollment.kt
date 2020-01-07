@@ -25,14 +25,17 @@ class Enrollment : Fragment() {
         val binding: FragmentEnrollmentBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_enrollment,container,false)
 
-        val adapter =EnrollmentCourseAdapter()
         val application =requireNotNull(this.activity).application
         val dataSource = TuitionDatabase.getInstance(application).courseDatabaseDao
         val viewModelFactory = EnrollmentViewModelFactory(dataSource,application )
-        binding.courseList.adapter = adapter
+
         val EnrollmentViewModel =
             ViewModelProviders.of(
                 this, viewModelFactory).get(EnrollmentViewModel::class.java)
+
+        val adapter = EnrollmentCourseAdapter()
+        binding.courseList.adapter = adapter
+
         EnrollmentViewModel.courses.observe(viewLifecycleOwner ,androidx.lifecycle.Observer {
             it?.let {
                 adapter.data = it

@@ -26,6 +26,6 @@ interface CourseDao {
     @Query("SELECT * FROM course_table ORDER BY course_ID DESC LIMIT 1")
     fun getLastCourse(): Course
 
-    @Query("SELECT * FROM course_table ORDER BY course_ID DESC")
+    @Query("SELECT * FROM course_table ORDER BY course_ID ASC")
     fun getAllCourse(): LiveData<List<Course>>
 }
