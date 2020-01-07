@@ -5,7 +5,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#E6EE9C">
 
         <TextView
             android:id="@+id/txtDesc"
@@ -22,45 +23,43 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btnNotes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="32dp"
-            android:text="Notes"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDesc" />
-
-        <Button
-            android:id="@+id/btnAudio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:text="Download Audio"
-            app:layout_constraintStart_toEndOf="@+id/btnNotes"
-            app:layout_constraintTop_toBottomOf="@+id/txtDesc" />
-
-        <ImageView
-            android:id="@+id/img_notes"
-            android:layout_width="312dp"
-            android:layout_height="328dp"
-            android:animateLayoutChanges="true"
-            android:visibility="visible"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="345dp"
+            android:layout_height="566dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/menu_curve_transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnNotes" />
+            app:layout_constraintTop_toBottomOf="@+id/txtDesc"
+            app:layout_constraintVertical_bias="1.0">
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="160dp"
-            android:text="Button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_notes" />
+            <Button
+                android:id="@+id/btnAudio"
+                android:layout_width="189dp"
+                android:layout_height="82dp"
+                android:layout_marginTop="68dp"
+                android:background="@drawable/button_addnew"
+                android:text="Audio"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnNotes" />
+
+            <Button
+                android:id="@+id/btnNotes"
+                android:layout_width="189dp"
+                android:layout_height="82dp"
+                android:layout_marginTop="68dp"
+                android:background="@drawable/button_note"
+                android:text="Notes"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

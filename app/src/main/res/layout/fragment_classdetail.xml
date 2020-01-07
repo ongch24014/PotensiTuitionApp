@@ -5,23 +5,39 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/grad_yellow">
 
         <TextView
             android:id="@+id/class_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="16dp" />
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="28dp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/chapter_list"
-            android:layout_width="409dp"
-            android:layout_height="694dp"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="36dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="366dp"
+            android:layout_height="621dp"
+            android:background="@drawable/menu_curve"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/chapter_list"
+                android:layout_width="351dp"
+                android:layout_height="610dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="1dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
