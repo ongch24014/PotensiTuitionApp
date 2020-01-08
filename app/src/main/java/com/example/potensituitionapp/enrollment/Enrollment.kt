@@ -13,6 +13,7 @@ import com.example.potensituitionapp.R
 import com.example.potensituitionapp.database.TuitionDatabase
 import com.example.potensituitionapp.databinding.FragmentEnrollmentBinding
 import androidx.lifecycle.Observer
+import com.example.potensituitionapp.enrolldetails.EnrolldetailFragment
 import java.util.*
 
 class Enrollment : Fragment() {

@@ -204,6 +204,9 @@
         <action
             android:id="@+id/action_teachermainFragment_to_attendanceFragment"
             app:destination="@id/attendanceFragment" />
+        <action
+            android:id="@+id/action_teachermainFragment_to_attendanceTeacherFragment"
+            app:destination="@id/attendanceTeacherFragment" />
         <!--        <action-->
 <!--            android:id="@+id/action_teachermainFragment_to_attendanceFragment_T"-->
 <!--            app:destination="@id/attendanceFragment_T" />-->
@@ -285,6 +288,10 @@
         android:id="@+id/attendanceFragment"
         android:name="com.example.potensituitionapp.attendance.AttendanceFragment"
         android:label="AttendanceFragment" />
+    <fragment
+        android:id="@+id/attendanceTeacherFragment"
+        android:name="com.example.potensituitionapp.attendance.AttendanceTeacherFragment"
+        android:label="AttendanceTeacherFragment" />
     <!--    <fragment-->
 <!--        android:id="@+id/attendanceFragment_T"-->
 <!--        android:name="com.example.potensituitionapp.attendance.AttendanceFragment_T"-->
