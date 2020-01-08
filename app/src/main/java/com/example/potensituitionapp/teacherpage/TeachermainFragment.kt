@@ -67,7 +67,7 @@ class TeachermainFragment : Fragment() {
 
         binding.btnattendanceT.setOnClickListener{
             this.findNavController().navigate(
-                TeachermainFragmentDirections.actionTeachermainFragmentToAttendanceFragment()
+                TeachermainFragmentDirections.actionTeachermainFragmentToAttendanceTeacherFragment()
             )
         }
         return binding.root
