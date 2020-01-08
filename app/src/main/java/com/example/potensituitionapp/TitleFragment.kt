@@ -76,6 +76,7 @@ class TitleFragment : Fragment() {
         val timetabledb = TuitionDatabase.getInstance(application).timetableDatabaseDao
         val teacherdb = TuitionDatabase.getInstance(application).teacherDatabaseDao
         val teacherenrolldb = TuitionDatabase.getInstance(application).teacherEnrollDatabaseDao
+        val coursedb = TuitionDatabase.getInstance(application).courseDatabaseDao
 
 
         userdb.insert(Student(1,"S001","user","123"))
@@ -92,7 +93,7 @@ class TitleFragment : Fragment() {
         timetabledb.insert(Timetable(4,"C004","English","Room 3","20:00 - 22:00","Thursday","T004"))
         timetabledb.insert(Timetable(5,"C005","Chinese","Room 3","20:00 - 22:00","Friday","T005"))
 
-        chapterdb.insert(Chapter(1,"C001",1,"Life"))
+        chapterdb.insert(Chapter(1,"C001",1,"Life","bio_chap1","bio_chap1"))
         chapterdb.insert(Chapter(2,"C001",2,"Human Life"))
         chapterdb.insert(Chapter(3,"C001",3,"Organs"))
 
@@ -101,6 +102,14 @@ class TitleFragment : Fragment() {
 
         teacherenrolldb.insert(TeacherEnroll(1,"T001","C001","Biology"))
         teacherenrolldb.insert(TeacherEnroll(2,"T001","C002","Chemistry"))
+
+        coursedb.insert(Course(1,"C001","Biology","Learn some life changing organism",100.0))
+        coursedb.insert(Course(2,"C002","Chemistry","Mix some chemicals up, its fun!",100.0))
+        coursedb.insert(Course(3,"C003","Physics","Be the next Albert Einstein",200.0))
+        coursedb.insert(Course(4,"C004","English","Learn some American slang here!",100.0))
+        coursedb.insert(Course(5,"C005","Chinese","Learn how to say GongXiFaCai",200.0))
+
+
     }
 
 

@@ -2,29 +2,58 @@ package com.example.potensituitionapp.enrollment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.potensituitionapp.R
-import com.example.potensituitionapp.TextItemViewHolder
 import com.example.potensituitionapp.database.Course
+import com.example.potensituitionapp.databinding.ListItemCoursesBinding
 
-class EnrollmentCourseAdapter: RecyclerView.Adapter<TextItemViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextItemViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        val view = layoutInflater
-            .inflate(R.layout.text_enrollment, parent, false) as TextView
-        return TextItemViewHolder(view)
+class EnrollmentCourseAdapter(val clickListener: CourseListener):
+    ListAdapter<Course,EnrollmentCourseAdapter.ViewHolder>(CourseDiffCallback()) {
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = getItem(position)
+        holder.bind(getItem(position)!!, clickListener)
     }
 
-    override fun getItemCount() = data.size
-    override fun onBindViewHolder(holder: TextItemViewHolder, position: Int) {
-        val item = data[position]
-        holder.textView.text = item.courseName
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder.from(parent)
     }
-    var data =listOf<Course>()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
+
+    class ViewHolder private constructor(val binding: ListItemCoursesBinding) : RecyclerView.ViewHolder(binding.root){
+
+         fun bind(
+             item: Course,
+             clickListener: CourseListener
+         ) {
+            binding.course = item
+             binding.clickListener = clickListener
+             binding.executePendingBindings()
         }
 
+        companion object {
+             fun from(parent: ViewGroup): ViewHolder {
+                val layoutInflater = LayoutInflater.from(parent.context)
+                val binding = ListItemCoursesBinding.inflate(layoutInflater,parent,false)
+                return ViewHolder(binding)
+            }
+        }
+
+    }
+}
+
+class CourseDiffCallback : DiffUtil.ItemCallback<Course>() {
+    override fun areItemsTheSame(oldItem: Course, newItem: Course): Boolean {
+        return oldItem.courseID == newItem.courseID
+
+    }
+
+    override fun areContentsTheSame(oldItem: Course, newItem: Course): Boolean {
+        return oldItem == newItem
+    }
+
+}
+
+class CourseListener(val clickListener: (courseId: String) -> Unit){
+    fun onClick(course:Course) = clickListener(course.courseID)
 }

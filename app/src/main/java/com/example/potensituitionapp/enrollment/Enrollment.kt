@@ -1,18 +1,18 @@
 package com.example.potensituitionapp.enrollment
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.example.potensituitionapp.R
 import com.example.potensituitionapp.database.TuitionDatabase
 import com.example.potensituitionapp.databinding.FragmentEnrollmentBinding
-import com.example.potensituitionapp.timetable.TimetableViewModel
+import androidx.lifecycle.Observer
 import java.util.*
 
 class Enrollment : Fragment() {
@@ -25,17 +25,33 @@ class Enrollment : Fragment() {
         val binding: FragmentEnrollmentBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_enrollment,container,false)
 
-        val adapter =EnrollmentCourseAdapter()
         val application =requireNotNull(this.activity).application
         val dataSource = TuitionDatabase.getInstance(application).courseDatabaseDao
         val viewModelFactory = EnrollmentViewModelFactory(dataSource,application )
-        binding.courseList.adapter = adapter
-        val EnrollmentViewModel =
+
+        val enrollmentViewModel =
             ViewModelProviders.of(
                 this, viewModelFactory).get(EnrollmentViewModel::class.java)
-        EnrollmentViewModel.courses.observe(viewLifecycleOwner ,androidx.lifecycle.Observer {
+
+        val adapter = EnrollmentCourseAdapter(CourseListener { nightId ->
+            Toast.makeText(context, "${nightId}", Toast.LENGTH_LONG).show()
+
+            enrollmentViewModel.onCourseClicked(nightId)
+        })
+
+        enrollmentViewModel.navigateToCourse.observe(this, Observer { night ->
+            night?.let {
+                this.findNavController().navigate(
+            EnrollmentDirections.actionEnrollmentToEnrolldetailFragment(night))
+
+            }
+        })
+
+        binding.courseList.adapter = adapter
+
+        enrollmentViewModel.courses.observe(viewLifecycleOwner ,androidx.lifecycle.Observer {
             it?.let {
-                adapter.data = it
+                adapter.submitList(it)
             } })
 
         return binding.root

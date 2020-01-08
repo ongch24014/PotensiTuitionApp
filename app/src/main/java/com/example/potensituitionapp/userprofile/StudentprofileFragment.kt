@@ -11,6 +11,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.potensituitionapp.MainActivity
+import com.example.potensituitionapp.MainActivity.Companion.loggedUser
+import com.example.potensituitionapp.MainActivity.Companion.user_namename
 
 import com.example.potensituitionapp.R
 import com.example.potensituitionapp.database.Student
@@ -33,6 +35,9 @@ class StudentprofileFragment : Fragment() {
             inflater,
             R.layout.fragment_studentprofile, container, false)
 
+        binding.txtName.text = "Welcome, " + user_namename
+        binding.txtId.text = "ID : " + loggedUser
+
         binding.btnEnrollment.setOnClickListener {
             this.findNavController().navigate(
                     StudentprofileFragmentDirections.actionStudentprofileFragment2ToEnrollment()
@@ -42,6 +47,7 @@ class StudentprofileFragment : Fragment() {
         binding.logoutButton.setOnClickListener {
             MainActivity.loggedUser = ""
             MainActivity.role = ""
+            user_namename = ""
 
             Toast.makeText(activity, R.string.logout_success, Toast.LENGTH_SHORT).show()
 
@@ -51,6 +57,8 @@ class StudentprofileFragment : Fragment() {
                 StudentprofileFragmentDirections.actionStudentprofileFragment2ToLoginFragment())
 
         }
+
+
         return binding.root
     }
 

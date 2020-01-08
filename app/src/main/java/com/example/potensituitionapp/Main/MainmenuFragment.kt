@@ -80,22 +80,11 @@ class MainmenuFragment : Fragment() {
 
         binding.timetableList.adapter = adapter
 
-        binding.txtUser.text = "Welcome : " + loggedUser
 
         binding.btnattendanceS.setOnClickListener(){
             findNavController().navigate(MainmenuFragmentDirections.actionMainmenuFragmentToAttendanceFragment2())
         }
 
-        binding.LogoutButton.setOnClickListener{
-            loggedUser = ""
-            Toast.makeText(activity, R.string.logout_success, Toast.LENGTH_SHORT).show()
-
-            (activity as MainActivity).setNavInvisible()
-
-            this.findNavController().navigate(
-                MainmenuFragmentDirections
-                    .actionMainmenuFragmentToTitleFragment())
-        }
 
         mainmenuViewModel.navigateToDetailClass.observe(this, Observer { night ->
             night?.let {
