@@ -1,6 +1,7 @@
 package com.example.potensituitionapp.attendance
 
 import android.os.Bundle
+import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,7 @@ import kotlinx.android.synthetic.main.fragment_attendance.*
 
 
 open class AttendanceFragment() : Fragment() {
+    val AttendanceCode = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         val binding: FragmentAttendanceBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_attendance, container, false)
@@ -29,13 +31,18 @@ open class AttendanceFragment() : Fragment() {
         val secandCode = editText5.text
         val thirdCode = editText6.text
         val fouthCode = editText7.text
-        val AttendanceCode = firstCode
+
+        val AttendanceCode = firstCode.toString().plus(secandCode.toString().plus(thirdCode.toString().plus(fouthCode.toString())))
 
         val application = requireNotNull(this.activity).application
         val dataSource = TuitionDatabase.getInstance(application).classRecordDatabaseDao
 
-        if(dataSource.getClassRecord("").equals(AttendanceCode)){
-            Toast.makeText(null,"Had Been Success Sign In",Toast.LENGTH_LONG)
+        try{
+            if(dataSource.getClassRecord("").equals(AttendanceCode)){
+                Toast.makeText(null,"Had Been Success Sign Attendance",Toast.LENGTH_LONG)
+            }
+        }catch (e: NumberFormatException){
+
         }
     }
 }
