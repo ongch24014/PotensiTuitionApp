@@ -29,9 +29,8 @@ open class AttendanceFragment() : Fragment() {
         val secandCode = editText5.text
         val thirdCode = editText6.text
         val fouthCode = editText7.text
-        val AttendanceCode = firstCode.append(secandCode).append(thirdCode).append(fouthCode)
+        val AttendanceCode = firstCode
 
-        println(AttendanceCode)
         val application = requireNotNull(this.activity).application
         val dataSource = TuitionDatabase.getInstance(application).classRecordDatabaseDao
 
