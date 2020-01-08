@@ -10,84 +10,88 @@
             type="com.example.potensituitionapp.addcourse.AddcourseViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
 
-        <EditText
-            android:id="@+id/editText7"
-            android:layout_width="87dp"
-            android:layout_height="91dp"
-            android:layout_marginTop="72dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/border"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/grad_yellow">
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="87dp"
-            android:layout_height="91dp"
-            android:layout_marginTop="72dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/border"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toStartOf="@+id/editText5"
-            app:layout_constraintHorizontal_bias="0.8"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/editText5"
-            android:layout_width="87dp"
-            android:layout_height="91dp"
-            android:layout_marginTop="72dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/border"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toStartOf="@+id/editText6"
-            app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="344dp"
+                android:layout_height="619dp"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="109dp"
+                android:layout_marginEnd="42dp"
+                android:background="@drawable/menu_curve_transparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/editText6"
-            android:layout_width="87dp"
-            android:layout_height="91dp"
-            android:layout_marginTop="72dp"
-            android:layout_marginEnd="12dp"
-            android:background="@drawable/border"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toStartOf="@+id/editText7"
-            app:layout_constraintTop_toTopOf="parent" />
+                <EditText
+                    android:id="@+id/txtNum1"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="44dp"
+                    android:background="@drawable/border_att"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="272dp"
-            android:text="Sign"
-            app:layout_constraintEnd_toStartOf="@+id/button2"
-            app:layout_constraintHorizontal_bias="0.853"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                <EditText
+                    android:id="@+id/txtNum2"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="44dp"
+                    android:background="@drawable/border_att"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toEndOf="@+id/txtNum1"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="272dp"
-            android:layout_marginEnd="100dp"
-            android:text="Overoll"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                <EditText
+                    android:id="@+id/txtNum3"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="44dp"
+                    android:background="@drawable/border_att"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toEndOf="@+id/txtNum2"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <EditText
+                    android:id="@+id/txtNum4"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="44dp"
+                    android:background="@drawable/border_att"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toEndOf="@+id/txtNum3"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 </layout>

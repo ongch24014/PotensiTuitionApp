@@ -287,11 +287,13 @@
     <fragment
         android:id="@+id/attendanceFragment"
         android:name="com.example.potensituitionapp.attendance.AttendanceFragment"
-        android:label="AttendanceFragment" />
+        android:label="AttendanceFragment"
+        tools:layout="@layout/fragment_attendance"/>
     <fragment
         android:id="@+id/attendanceTeacherFragment"
         android:name="com.example.potensituitionapp.attendance.AttendanceTeacherFragment"
-        android:label="AttendanceTeacherFragment" />
+        android:label="AttendanceTeacherFragment"
+        tools:layout="@layout/fragment_attendance_teacher"/>
     <!--    <fragment-->
 <!--        android:id="@+id/attendanceFragment_T"-->
 <!--        android:name="com.example.potensituitionapp.attendance.AttendanceFragment_T"-->

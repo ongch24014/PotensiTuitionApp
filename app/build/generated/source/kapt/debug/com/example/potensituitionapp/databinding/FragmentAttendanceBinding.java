@@ -14,28 +14,22 @@ public class FragmentAttendanceBinding extends androidx.databinding.ViewDataBind
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.editText7, 1);
-        sViewsWithIds.put(R.id.editText, 2);
-        sViewsWithIds.put(R.id.editText5, 3);
-        sViewsWithIds.put(R.id.editText6, 4);
-        sViewsWithIds.put(R.id.button, 5);
-        sViewsWithIds.put(R.id.button2, 6);
+        sViewsWithIds.put(R.id.txtNum1, 1);
+        sViewsWithIds.put(R.id.txtNum2, 2);
+        sViewsWithIds.put(R.id.txtNum3, 3);
+        sViewsWithIds.put(R.id.txtNum4, 4);
     }
     // views
     @NonNull
-    public final android.widget.Button button;
+    private final android.widget.ScrollView mboundView0;
     @NonNull
-    public final android.widget.Button button2;
+    public final android.widget.EditText txtNum1;
     @NonNull
-    public final android.widget.EditText editText;
+    public final android.widget.EditText txtNum2;
     @NonNull
-    public final android.widget.EditText editText5;
+    public final android.widget.EditText txtNum3;
     @NonNull
-    public final android.widget.EditText editText6;
-    @NonNull
-    public final android.widget.EditText editText7;
-    @NonNull
-    private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
+    public final android.widget.EditText txtNum4;
     // variables
     @Nullable
     private com.example.potensituitionapp.addcourse.AddcourseViewModel mAddcourseViewModel;
@@ -45,15 +39,13 @@ public class FragmentAttendanceBinding extends androidx.databinding.ViewDataBind
 
     public FragmentAttendanceBinding(@NonNull androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
         super(bindingComponent, root, 0);
-        final Object[] bindings = mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds);
-        this.button = (android.widget.Button) bindings[5];
-        this.button2 = (android.widget.Button) bindings[6];
-        this.editText = (android.widget.EditText) bindings[2];
-        this.editText5 = (android.widget.EditText) bindings[3];
-        this.editText6 = (android.widget.EditText) bindings[4];
-        this.editText7 = (android.widget.EditText) bindings[1];
-        this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
+        final Object[] bindings = mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds);
+        this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
+        this.txtNum1 = (android.widget.EditText) bindings[1];
+        this.txtNum2 = (android.widget.EditText) bindings[2];
+        this.txtNum3 = (android.widget.EditText) bindings[3];
+        this.txtNum4 = (android.widget.EditText) bindings[4];
         setRootTag(root);
         // listeners
         invalidateAll();
