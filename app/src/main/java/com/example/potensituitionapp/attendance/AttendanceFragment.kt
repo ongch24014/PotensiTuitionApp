@@ -23,13 +23,18 @@ open class AttendanceFragment() : Fragment() {
     }
 
     fun CompareSign(){
-        val AttendanceCode = editText.text +  editText5.text + editText6.text + editText7.text
+        val firstCode = editText.text
+        val secandCode = editText5.text
+        val thirdCode = editText6.text
+        val fouthCode = editText7.text
+        val AttendanceCode = firstCode.append(secandCode).append(thirdCode).append(fouthCode)
 
+        println(AttendanceCode)
         val application = requireNotNull(this.activity).application
         val dataSource = TuitionDatabase.getInstance(application).classRecordDatabaseDao
 
         if(dataSource.getClassRecord("").equals(AttendanceCode)){
-            Toast.makeText(null,"Had Been Success Sign In",10)
+            Toast.makeText(null,"Had Been Success Sign In",Toast.LENGTH_LONG)
         }
     }
 }
