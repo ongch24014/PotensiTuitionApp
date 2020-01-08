@@ -18,7 +18,9 @@ open class AttendanceFragment() : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         val binding: FragmentAttendanceBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_attendance, container, false)
-        CompareSign()
+        binding.button.setOnClickListener(){
+            CompareSign()
+        }
         return binding.root
     }
 
