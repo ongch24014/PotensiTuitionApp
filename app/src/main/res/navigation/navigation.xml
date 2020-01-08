@@ -201,7 +201,10 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-<!--        <action-->
+        <action
+            android:id="@+id/action_teachermainFragment_to_attendanceFragment"
+            app:destination="@id/attendanceFragment" />
+        <!--        <action-->
 <!--            android:id="@+id/action_teachermainFragment_to_attendanceFragment_T"-->
 <!--            app:destination="@id/attendanceFragment_T" />-->
 <!--        <action-->
@@ -278,6 +281,10 @@
             android:id="@+id/action_enrolldetailFragment_to_mainmenuFragment"
             app:destination="@id/mainmenuFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/attendanceFragment"
+        android:name="com.example.potensituitionapp.attendance.AttendanceFragment"
+        android:label="AttendanceFragment" />
     <!--    <fragment-->
 <!--        android:id="@+id/attendanceFragment_T"-->
 <!--        android:name="com.example.potensituitionapp.attendance.AttendanceFragment_T"-->
