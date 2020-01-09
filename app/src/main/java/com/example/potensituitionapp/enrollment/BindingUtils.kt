@@ -1,4 +1,4 @@
-package com.example.potensituitionapp.Enrollment
+package com.example.potensituitionapp.enrollment
 
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout

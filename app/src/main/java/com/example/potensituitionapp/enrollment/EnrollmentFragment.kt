@@ -16,7 +16,7 @@ import androidx.lifecycle.Observer
 import com.example.potensituitionapp.enrolldetails.EnrolldetailFragment
 import java.util.*
 
-class Enrollment : Fragment() {
+class EnrollmentFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,15 +35,13 @@ class Enrollment : Fragment() {
                 this, viewModelFactory).get(EnrollmentViewModel::class.java)
 
         val adapter = EnrollmentCourseAdapter(CourseListener { nightId ->
-            Toast.makeText(context, "${nightId}", Toast.LENGTH_LONG).show()
-
             enrollmentViewModel.onCourseClicked(nightId)
         })
 
         enrollmentViewModel.navigateToCourse.observe(this, Observer { night ->
             night?.let {
                 this.findNavController().navigate(
-            EnrollmentDirections.actionEnrollmentToEnrolldetailFragment(night))
+            EnrollmentFragmentDirections.actionEnrollmentToEnrolldetailFragment(night))
 
             }
         })

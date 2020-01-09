@@ -176,7 +176,7 @@
     </fragment>
     <fragment
         android:id="@+id/enrollment"
-        android:name="com.example.potensituitionapp.enrollment.Enrollment"
+        android:name="com.example.potensituitionapp.enrollment.EnrollmentFragment"
         android:label="Enrollment" >
         <action
             android:id="@+id/action_enrollment_to_enrolldetailFragment"
