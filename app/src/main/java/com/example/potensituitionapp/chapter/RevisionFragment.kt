@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import com.example.potensituitionapp.MainActivity
 import com.example.potensituitionapp.MainActivity.Companion.loggedUser
 
 import com.example.potensituitionapp.R
@@ -84,6 +85,8 @@ class RevisionFragment : Fragment() {
                 Toast.makeText(activity, "Successfully updated! Remember to do revision!", Toast.LENGTH_SHORT).show()
 
             }
+
+            (activity as MainActivity).sendNotification(this.view!!)
         }
         return binding.root
     }
