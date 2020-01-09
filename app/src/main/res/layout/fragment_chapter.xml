@@ -59,6 +59,19 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnRevision"
+                android:layout_width="189dp"
+                android:layout_height="82dp"
+                android:layout_marginTop="68dp"
+                android:text="Revision"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:background="@drawable/grad_login_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAudio" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

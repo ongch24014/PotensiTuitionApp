@@ -59,6 +59,12 @@ class ChapterFragment : Fragment() {
                     actionChapterFragmentToAudioFragment(chap.chapterAudio))
         }
 
+        binding.btnRevision.setOnClickListener {
+            this.findNavController().navigate(
+                ChapterFragmentDirections.actionChapterFragmentToRevisionFragment(chap.chapterNum.toString(),chap.chapterNum.toString())
+            )
+        }
+
         return binding.root
     }
 
