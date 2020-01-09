@@ -59,7 +59,6 @@ class ClassdetailFragment : Fragment() {
 
 
         val adapter = ClassdetailAdapter(ChapterListener { classNum ->
-            Toast.makeText(context, "${classNum}", Toast.LENGTH_LONG).show()
             classdetailViewModel.onChapterClicked(classNum)
         })
 

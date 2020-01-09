@@ -65,7 +65,6 @@ class MainmenuFragment : Fragment() {
                 this, viewModelFactory).get(MainmenuViewModel::class.java)
 
         val adapter = MainmenuAdapter(TimetableListener { classId ->
-            Toast.makeText(context,"${classId}",Toast.LENGTH_LONG).show()
             mainmenuViewModel.onClassDetailClicked(classId)
         })
 
