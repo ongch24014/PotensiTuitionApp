@@ -94,8 +94,8 @@ class MainActivity : AppCompatActivity() {
         val channelId = "com.example.potensituitionapp"
 
         val notfication = Notification.Builder(this@MainActivity, channelId)
-            .setContentTitle("Demo Notification")
-            .setContentText("Hi Buddy")
+            .setContentTitle("Potensi Tuition Application")
+            .setContentText("Remember to do revision!")
             .setSmallIcon(R.mipmap.ic_launcher)
             .setChannelId(channelId)
             .build()
