@@ -81,7 +81,7 @@ class MainmenuFragment : Fragment() {
 
 
         binding.btnattendanceS.setOnClickListener(){
-            findNavController().navigate(MainmenuFragmentDirections.actionMainmenuFragmentToAttendanceFragment2())
+            findNavController().navigate(MainmenuFragmentDirections.actionMainmenuFragmentToAttendanceFragment())
         }
 
 

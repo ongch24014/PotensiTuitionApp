@@ -8,25 +8,30 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/grad_yellow">
 
             <Button
                 android:id="@+id/loginButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="146dp"
+                android:layout_height="102dp"
+                android:background="@drawable/button_note"
                 android:text="@string/login_button"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.528"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.358" />
+                app:layout_constraintVertical_bias="0.457" />
 
             <Button
                 android:id="@+id/RegisterButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/register_button"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -34,11 +39,14 @@
 
             <Button
                 android:id="@+id/addData"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="28dp"
-                android:layout_marginBottom="44dp"
+                android:layout_width="172dp"
+                android:layout_height="68dp"
+                android:layout_marginEnd="120dp"
+                android:layout_marginBottom="52dp"
+                android:background="@drawable/button_addnew"
                 android:text="Add data"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>

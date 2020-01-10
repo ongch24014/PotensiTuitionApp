@@ -20,6 +20,9 @@ interface TeacherDao {
     @Query("SELECT * from teacher_table WHERE name = :key")
     fun getTeacher(key: String): Teacher?
 
+    @Query("SELECT * from teacher_table WHERE teacher_ID = :key")
+    fun getTeacher2(key: String): Teacher
+
     @Query("DELETE FROM teacher_table")
     fun clear()
 

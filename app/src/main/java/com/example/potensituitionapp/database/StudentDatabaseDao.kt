@@ -14,11 +14,17 @@ interface StudentDatabaseDao {
     @Update
     fun update(student: Student)
 
+    @Query("SELECT * from student_table")
+    fun getALL(): Student
+
     @Query("SELECT * from student_table WHERE num = :key")
     fun get(key: Long): Student?
 
     @Query("SELECT * from student_table WHERE name = :key")
     fun getStudent(key: String): Student?
+
+    @Query("SELECT * from student_table WHERE student_ID = :key")
+    fun getStudent2(key: String): Student?
 
     @Query("SELECT * from student_table WHERE name = :key")
     fun getStudent1(key: String): Student

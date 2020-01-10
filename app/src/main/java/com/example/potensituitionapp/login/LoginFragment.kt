@@ -68,8 +68,8 @@ class LoginFragment : Fragment() {
 
             this.hideKeyboard()
 
-            var stud: Student? = dataSource.getStudent(username)
-            var teach: Teacher? = dataSource1.getTeacher(username)
+            var stud: Student? = dataSource.getStudent2(username)
+            var teach: Teacher? = dataSource1.getTeacher2(username)
 
             if(stud == null && teach == null){
                 Toast.makeText(activity, R.string.login_failed, Toast.LENGTH_SHORT).show()

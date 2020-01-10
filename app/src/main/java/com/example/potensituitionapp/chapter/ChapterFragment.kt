@@ -47,6 +47,16 @@ class ChapterFragment : Fragment() {
 
         binding.txtDesc.text = title + " : " + chap.chapterDesc
 
+        if(chap.chapterPDF.equals("")){
+            binding.btnNotes.setEnabled(false)
+            binding.btnNotes.setBackgroundResource(R.drawable.button_disabled)
+        }
+
+        if(chap.chapterAudio.equals("")){
+            binding.btnAudio.setEnabled(false)
+            binding.btnAudio.setBackgroundResource(R.drawable.button_disabled)
+        }
+
         binding.btnNotes.setOnClickListener{
             this.findNavController().navigate(
                 ChapterFragmentDirections.
