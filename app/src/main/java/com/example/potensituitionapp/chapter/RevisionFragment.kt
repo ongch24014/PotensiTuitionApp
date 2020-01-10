@@ -4,7 +4,9 @@ package com.example.potensituitionapp.chapter
 import android.app.Activity
 import android.app.AlarmManager
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.provider.AlarmClock
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -87,6 +89,14 @@ class RevisionFragment : Fragment() {
             }
 
             (activity as MainActivity).sendNotification(this.view!!)
+        }
+
+        binding.btnReminder.setOnClickListener {
+            val i = Intent(AlarmClock.ACTION_SET_ALARM)
+            i.putExtra(AlarmClock.EXTRA_MESSAGE, "Do Revision!")
+            i.putExtra(AlarmClock.EXTRA_HOUR, 22)
+            i.putExtra(AlarmClock.EXTRA_MINUTES, 0)
+            startActivity(i)
         }
         return binding.root
     }
