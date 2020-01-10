@@ -79,27 +79,15 @@
             app:enterAnim="@anim/nav_default_pop_enter_anim"
             app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
-            android:id="@+id/action_mainmenuFragment_to_addcourseFragment2"
-            app:destination="@id/addcourseFragment" />
-        <action
             android:id="@+id/action_mainmenuFragment_to_classdetailFragment"
             app:destination="@id/classdetailFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <action
-            android:id="@+id/action_mainmenuFragment_to_attendanceFragment2"
-            app:destination="@id/navigation2" />
     </fragment>
 
 
-    <fragment
-        android:id="@+id/addcourseFragment"
-        android:name="com.example.potensituitionapp.addcourse.AddcourseFragment"
-        android:label="AddcourseFragment"
-        tools:layout="@layout/fragment_addcourse"
-        />
     <fragment
         android:id="@+id/studentprofileFragment2"
         android:name="com.example.potensituitionapp.userprofile.StudentprofileFragment"
@@ -174,7 +162,8 @@
     <fragment
         android:id="@+id/notesFragment"
         android:name="com.example.potensituitionapp.chapter.NotesFragment"
-        android:label="NotesFragment" >
+        android:label="NotesFragment"
+        tools:layout="@layout/fragment_notes">
         <argument
             android:name="notepath"
             app:argType="string" />
@@ -182,7 +171,8 @@
     <fragment
         android:id="@+id/audioFragment"
         android:name="com.example.potensituitionapp.chapter.AudioFragment"
-        android:label="AudioFragment" >
+        android:label="AudioFragment"
+        tools:layout="@layout/fragment_audio">
         <argument
             android:name="audiopath"
             app:argType="string" />
@@ -190,7 +180,8 @@
     <fragment
         android:id="@+id/enrollment"
         android:name="com.example.potensituitionapp.enrollment.EnrollmentFragment"
-        android:label="Enrollment" >
+        android:label="Enrollment"
+        tools:layout="@layout/fragment_enrollment">
         <action
             android:id="@+id/action_enrollment_to_enrolldetailFragment"
             app:destination="@id/enrolldetailFragment" />
@@ -278,18 +269,11 @@
             app:popUpTo="@+id/teacherclassFragment"
             app:popUpToInclusive="true" />
     </fragment>
-    <navigation
-        android:id="@+id/navigation2"
-        app:startDestination="@id/attendanceFragment2" >
-        <fragment
-            android:id="@+id/attendanceFragment2"
-            android:name="com.example.potensituitionapp.attendance.AttendanceFragment"
-            android:label="AttendanceFragment" />
-    </navigation>
     <fragment
         android:id="@+id/enrolldetailFragment"
         android:name="com.example.potensituitionapp.enrolldetails.EnrolldetailFragment"
-        android:label="EnrolldetailFragment" >
+        android:label="EnrolldetailFragment"
+        tools:layout="@layout/fragment_enrolldetail">
         <argument
             android:name="courseId"
             app:argType="string" />
@@ -310,7 +294,8 @@
     <fragment
         android:id="@+id/revisionFragment"
         android:name="com.example.potensituitionapp.chapter.RevisionFragment"
-        android:label="RevisionFragment" >
+        android:label="RevisionFragment"
+        tools:layout="@layout/fragment_revision">
         <argument android:name="c_num"
             app:argType="string" />
         <argument
